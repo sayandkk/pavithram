@@ -5,10 +5,9 @@ import { Button } from "@/components/ui/button";
 const featured = products.slice(0, 4);
 
 const categoryColors: Record<string, string> = {
-  Snacks: "bg-secondary/20 text-earth",
-  Flours: "bg-gold-light text-earth",
-  Spices: "bg-spice/10 text-spice",
-  Grains: "bg-primary/10 text-primary",
+  Milk: "bg-blue-100 text-blue-800",
+  Ghee: "bg-gold-light text-earth",
+  Dairy: "bg-primary/10 text-primary",
 };
 
 const FeaturedProducts = () => {
@@ -18,7 +17,7 @@ const FeaturedProducts = () => {
         <div className="text-center mb-12">
           <p className="text-secondary font-medium tracking-widest uppercase text-sm mb-3">Best Sellers</p>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-            Our Featured Products
+            Our Featured Dairy Products
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -33,7 +32,7 @@ const FeaturedProducts = () => {
             >
               <div className="h-48 bg-muted flex items-center justify-center overflow-hidden">
                 <span className="text-7xl group-hover:scale-110 transition-transform duration-500">
-                  {product.category === "Snacks" ? "🍌" : product.category === "Flours" ? "🌾" : product.category === "Spices" ? "🌶️" : "🍚"}
+                  {product.category === "Milk" ? "🥛" : product.category === "Ghee" ? "🧈" : "🥣"}
                 </span>
               </div>
               <div className="p-5">

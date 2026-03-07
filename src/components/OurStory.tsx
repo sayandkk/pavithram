@@ -23,17 +23,17 @@ const OurStory = () => {
           >
             <p className="text-secondary font-medium tracking-widest uppercase text-sm mb-3">Our Story</p>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-              Rooted in Tradition, Built with Trust
+              Pure Milk, Pure Trust, Rooted in Tradition
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Pavithram was born in Pattambi with a simple mission — to bring the authentic flavors of Kerala's
-              kitchens to modern homes without compromise. What started as a small venture has grown into a
-              trusted name across 14 districts.
+              Pavithram was established in Pattambi with a singular vision — to provide every household in Kerala
+              with access to the purest farm-fresh milk and dairy products. Our commitment to quality has
+              made us a household name for dairy excellence.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Today, from our state-of-the-art facility in Kozhikotiri, we process, pack, and deliver
-              traditional food products with the same love your grandmother put into her cooking — just with
-              world-class hygiene and quality standards.
+              From our state-of-the-art facility in Kozhikotiri, we process and deliver milk and dairy
+              products using the highest hygiene standards, ensuring that every drop of Pavithram milk
+              carries the promise of health and purity for your family.
             </p>
             <div className="flex gap-8">
               <div>

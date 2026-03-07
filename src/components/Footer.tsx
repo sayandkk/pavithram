@@ -4,18 +4,21 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-display text-2xl font-bold text-primary-foreground mb-4">Pavithram</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.png" alt="Pavithram Logo" className="h-16 w-auto object-contain brightness-0 invert" />
+              <h3 className="font-display text-2xl font-bold text-primary-foreground">Pavithram</h3>
+            </div>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">
-              Authentic Kerala food products manufactured with love and precision at Kozhikotiri, Palakkad.
+              Pure and fresh dairy products from the heart of Palakkad, ensuring health and quality for your family.
             </p>
           </div>
           <div>
             <h4 className="font-display font-semibold text-primary-foreground mb-4">Products</h4>
             <ul className="space-y-2 text-primary-foreground/60 text-sm">
-              <li>Snacks & Savories</li>
-              <li>Spice Blends</li>
-              <li>Rice & Flours</li>
-              <li>Ready Mixes</li>
+              <li>Fresh Cow Milk</li>
+              <li>Pure Cow Ghee</li>
+              <li>Fresh Curd & Butter</li>
+              <li>Dairy Essentials</li>
             </ul>
           </div>
           <div>

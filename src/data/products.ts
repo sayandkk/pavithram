@@ -7,21 +7,18 @@ export interface Product {
 }
 
 export const products: Product[] = [
-  { id: 1, name: "Classic Banana Chips", category: "Snacks", packSizes: "100g, 250g, 500g", description: "Thinly sliced Nendran bananas fried in pure coconut oil." },
-  { id: 2, name: "Roasted Rice Powder", category: "Flours", packSizes: "500g, 1kg", description: "Double-roasted, fine-grain powder for perfect Puttu." },
-  { id: 3, name: "Sambar Powder", category: "Spices", packSizes: "50g, 100g", description: "A secret blend of 12 roasted spices for authentic taste." },
-  { id: 4, name: "Spicy Murukku", category: "Snacks", packSizes: "200g", description: "Traditional crunchy snack made with rice flour and cumin." },
-  { id: 5, name: "Palakkadan Matta Rice", category: "Grains", packSizes: "5kg, 10kg", description: "Nutrient-rich, premium quality red parboiled rice." },
-  { id: 6, name: "Turmeric Powder", category: "Spices", packSizes: "100g, 250g", description: "High-curcumin turmeric sourced from local farmers." },
-  { id: 7, name: "Jackfruit Chips", category: "Snacks", packSizes: "150g", description: "Seasonal specialty, vacuum-fried for maximum crunch." },
-  { id: 8, name: "Appam/Idiyappam Mix", category: "Flours", packSizes: "500g", description: "Ready-to-cook mix for soft, white traditional breakfast." },
-  { id: 9, name: "Unniyappam Mix", category: "Ready-Mix", packSizes: "500g", description: "Just add water/jaggery for traditional sweet fritters." },
-  { id: 10, name: "Meat Masala", category: "Spices", packSizes: "100g", description: "Robust spice blend for traditional Kerala style curries." },
+  { id: 1, name: "Fresh Cow Milk", category: "Milk", packSizes: "500ml, 1L", description: "Farm-fresh, pasteurized cow milk delivered daily for your health." },
+  { id: 2, name: "Pure Cow Ghee", category: "Ghee", packSizes: "200ml, 500ml, 1L", description: "Traditional granular ghee made from pure cow milk with a rich aroma." },
+  { id: 3, name: "Fresh Curd", category: "Dairy", packSizes: "250g, 500g", description: "Thick, creamy, and natural curd set to perfection." },
+  { id: 4, name: "Pure Butter", category: "Dairy", packSizes: "100g, 200g, 500g", description: "Unsalted and salted variants of creamy butter made from fresh cream." },
+  { id: 5, name: "Fresh Paneer", category: "Dairy", packSizes: "200g, 500g", description: "Soft and fresh cottage cheese, perfect for your favorite recipes." },
+  { id: 6, name: "Flavored Milk", category: "Milk", packSizes: "200ml", description: "Delicious and nutritious milk in chocolate, strawberry, and badam flavors." },
+  { id: 7, name: "Fresh Cream", category: "Dairy", packSizes: "250ml", description: "Silky smooth fresh cream for desserts and cooking." },
+  { id: 8, name: "Traditional Buttermilk", category: "Dairy", packSizes: "500ml", description: "Refreshing and digestive spiced buttermilk." },
 ];
 
 export const categories = [
-  { name: "Snacks & Savories", icon: "🍌", count: 3 },
-  { name: "Traditional Spice Blends", icon: "🌶️", count: 3 },
-  { name: "Rice Products & Flours", icon: "🌾", count: 3 },
-  { name: "Breakfast Essentials", icon: "☕", count: 1 },
+  { name: "Fresh Milk", icon: "🥛", count: 2 },
+  { name: "Pure Ghee", icon: "🧈", count: 1 },
+  { name: "Dairy Essentials", icon: "🥣", count: 5 },
 ];
