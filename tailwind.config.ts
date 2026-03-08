@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        body: ['"Outfit"', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -70,9 +71,13 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "1.5rem",
+        md: "1rem",
+        sm: "0.5rem",
+      },
+      boxShadow: {
+        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+        "glass-sm": "0 4px 16px 0 rgba(31, 38, 135, 0.2)",
       },
       keyframes: {
         "accordion-down": {
