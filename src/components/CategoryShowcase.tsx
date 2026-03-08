@@ -49,13 +49,17 @@ const CategoryShowcase = () => {
               className="group cursor-pointer relative"
             >
               <div className="glass-card p-10 h-full flex flex-col items-center justify-center text-center group-hover:bg-primary transition-all duration-500 overflow-hidden relative">
-                {/* Decorative Background Icon */}
-                <div className="absolute top-[-20px] right-[-20px] text-9xl opacity-[0.05] group-hover:opacity-[0.15] group-hover:scale-150 transition-all duration-700 pointer-events-none">
-                  {cat.icon}
+                {/* Decorative Background Icon/Image */}
+                <div className="absolute top-[-20px] right-[-20px] text-9xl w-40 h-40 opacity-[0.05] group-hover:opacity-[0.15] group-hover:scale-150 transition-all duration-700 pointer-events-none overflow-hidden rounded-full">
+                  {cat.image ? <img src={cat.image} alt="" className="w-full h-full object-cover grayscale" /> : cat.icon}
                 </div>
 
-                <div className="w-24 h-24 rounded-3xl bg-primary/5 flex items-center justify-center text-6xl mb-8 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-500">
-                  {cat.icon}
+                <div className="w-24 h-24 rounded-3xl bg-primary/5 flex items-center justify-center text-6xl mb-8 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-500 overflow-hidden shadow-inner">
+                  {cat.image ? (
+                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                  ) : (
+                    cat.icon
+                  )}
                 </div>
 
                 <h3 className="font-display font-bold text-primary text-2xl mb-3 group-hover:text-white transition-colors">{cat.name}</h3>

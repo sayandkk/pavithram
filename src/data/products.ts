@@ -18,7 +18,7 @@ export const products: Product[] = [
 ];
 
 export const categories = [
-  { name: "Fresh Milk", icon: "🥛", count: 2 },
+  { name: "Fresh Milk", icon: "🥛", count: 2, image: "/assets/fresh-milk.jpeg" },
   { name: "Pure Ghee", icon: "🧈", count: 1 },
   { name: "Dairy Essentials", icon: "🥣", count: 5 },
 ];
