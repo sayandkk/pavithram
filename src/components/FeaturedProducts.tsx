@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { products } from "@/data/products";
-import { Button } from "@/components/ui/button";
+
 import { ChevronRight } from "lucide-react";
 
 const featured = products.slice(0, 4);
@@ -40,9 +40,9 @@ const FeaturedProducts = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <Button variant="ghost" className="text-secondary hover:text-secondary hover:bg-secondary/5 font-bold gap-2">
+            <a href="#products" className="flex items-center text-secondary hover:text-secondary/80 font-bold gap-2 transition-colors">
               View All Products <ChevronRight size={20} />
-            </Button>
+            </a>
           </motion.div>
         </div>
 
@@ -75,9 +75,9 @@ const FeaturedProducts = () => {
                 <h3 className="font-display font-bold text-primary text-xl mb-2 group-hover:text-secondary transition-colors line-clamp-1">{product.name}</h3>
                 <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed mb-6 h-10">{product.description}</p>
 
-                <Button className="w-full rounded-2xl bg-primary hover:bg-secondary transition-all duration-300 shadow-lg shadow-primary/10 group-hover:shadow-secondary/20 h-12 font-bold">
-                  Add to Cart
-                </Button>
+                <div className="w-full rounded-2xl bg-primary/5 hover:bg-primary hover:text-white text-primary border border-primary/10 transition-all duration-300 h-12 font-bold flex items-center justify-center gap-2 cursor-pointer group-hover:border-transparent">
+                  Enquire Now <ChevronRight size={18} />
+                </div>
               </div>
             </motion.div>
           ))}
