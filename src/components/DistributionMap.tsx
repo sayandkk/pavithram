@@ -19,16 +19,16 @@ const DistributionMap = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-bold tracking-wide uppercase mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-bold tracking-wide uppercase mb-8"
             >
               <Globe size={16} /> Pan-Kerala Presence
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary mb-8 leading-[1.1]">
-              Serving the <span className="text-secondary">Heart of Kerala</span> with Purity
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8 leading-[1.1]">
+              Serving the <span className="text-accent">Heart of Kerala</span> with Purity
             </h2>
 
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
+            <p className="text-lg text-foreground/70 leading-relaxed mb-10 max-w-xl">
               From our central hub in Palakkad, Pavithram’s cold-chain logistics network spans across all 14 districts. We ensure that every home in God's Own Country has access to farm-fresh dairy excellence within hours.
             </p>
 
@@ -40,10 +40,10 @@ const DistributionMap = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="glass-card p-4 text-center border-slate-100 hover:border-primary/20 hover:bg-primary/5 transition-all duration-300"
+                  className="glass-card p-4 text-center border-slate-100 hover:border-accent/20 hover:bg-accent/5 transition-all duration-300"
                 >
                   <MapPin size={18} className="mx-auto text-secondary mb-2" />
-                  <span className="text-sm font-bold text-primary">{city}</span>
+                  <span className="text-sm font-bold text-foreground">{city}</span>
                 </motion.div>
               ))}
             </div>
@@ -53,7 +53,7 @@ const DistributionMap = () => {
                 <CheckCircle size={24} />
               </div>
               <div>
-                <p className="text-sm font-bold text-primary">100% District Coverage</p>
+                <p className="text-sm font-bold text-foreground">100% District Coverage</p>
                 <p className="text-xs text-muted-foreground">Operating a robust network of 500+ distribution partners.</p>
               </div>
             </div>
@@ -68,10 +68,10 @@ const DistributionMap = () => {
           >
             {/* Abstract Connectivity Visualization */}
             <div className="relative aspect-square glass-card bg-slate-50 flex items-center justify-center border-slate-100 overflow-hidden group">
-              <div className="absolute inset-0 bg-primary/2.5 group-hover:bg-primary/5 transition-colors duration-700" />
+              <div className="absolute inset-0 bg-accent/3 group-hover:bg-accent/5 transition-colors duration-700" />
 
               {/* Central Hub */}
-              <div className="relative z-10 w-32 h-32 rounded-full border-4 border-white bg-primary shadow-2xl flex flex-col items-center justify-center text-white text-center p-4">
+              <div className="relative z-10 w-32 h-32 rounded-full border-4 border-background bg-accent shadow-2xl flex flex-col items-center justify-center text-white text-center p-4">
                 <p className="text-[10px] uppercase font-bold tracking-tighter opacity-70">Main Hub</p>
                 <p className="font-display font-bold text-lg leading-tight">Palakkad</p>
               </div>
@@ -84,11 +84,11 @@ const DistributionMap = () => {
                     rotate: [0, 360],
                   }}
                   transition={{ duration: 20 + i * 5, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-full h-full border border-primary/10 rounded-full"
+                  className="absolute w-full h-full border border-accent/10 rounded-full"
                   style={{ width: `${80 - i * 10}%`, height: `${80 - i * 10}%` }}
                 >
                   <div
-                    className="absolute w-4 h-4 rounded-full bg-secondary shadow-lg shadow-secondary/20"
+                    className="absolute w-4 h-4 rounded-full bg-accent shadow-lg shadow-accent/20"
                     style={{
                       top: '0%',
                       left: '50%',
@@ -100,12 +100,12 @@ const DistributionMap = () => {
 
               <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 glass p-4 rounded-2xl border-white/40">
                 <img src="/logo.png" alt="Pavithram" className="h-8 w-8 object-contain" />
-                <span className="font-bold text-primary text-sm">Quality on the Move</span>
+                <span className="font-bold text-foreground text-sm">Quality on the Move</span>
               </div>
             </div>
 
             {/* Decorative Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/5 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/5 rounded-full blur-[100px] -z-10" />
           </motion.div>
 
         </div>

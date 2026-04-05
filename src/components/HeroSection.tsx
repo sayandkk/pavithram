@@ -4,101 +4,95 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-white">
-      {/* Abstract Background Element */}
-      <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[120%] bg-primary/5 rounded-[100px] rotate-12 -z-0 blur-3xl" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-16">
+      {/* Full Background Image - starts after navbar */}
+      <div className="absolute inset-0 w-full h-full top-0 z-0">
+        <img
+          src="/hero.png"
+          alt="Premium Dairy Background"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Overlay gradient for readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+      </div>
 
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto px-6 relative z-10 max-w-5xl">
+        {/* Text Content Overlay */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="max-w-2xl"
         >
+          {/* Luxury header */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary text-sm font-semibold tracking-wide uppercase mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mb-8"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-            </span>
-            Pure & Fresh Dairy Products
+            <p className="text-accent font-serif text-xl italic mb-4">Heritage Since 1998</p>
+            <div className="w-12 h-1 bg-accent rounded-full mb-8" />
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary leading-[1.1] mb-8">
-            Pure Milk from Palakkad's <span className="text-secondary">Finest Farms</span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-tight mb-8 tracking-tight">
+            Liquid <br /> Gold from <br /> Palakkad
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-            Traditional purity meets modern dairy excellence. Experience the farm-fresh goodness of Pavithram Milk and Dairy products delivered straight to your home.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-5">
-            <Button size="lg" className="rounded-full px-8 h-14 text-base group">
-              Explore Products
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 h-14 text-base border-primary/20 hover:bg-primary/5">
-              Wholesale Inquiry
-            </Button>
-          </div>
-
-          <div className="mt-12 flex items-center gap-6">
-            <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-muted overflow-hidden">
-                  <img src={`https://i.pravatar.cc/100?u=${i + 10}`} alt="Customer" className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-            <div>
-              <p className="text-sm font-bold text-primary">10k+ Happy Families</p>
-              <div className="flex text-secondary">
-                {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="relative"
-        >
-          {/* Main Hero Image with Modern Frame */}
-          <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white max-h-[600px]">
-            <img
-              src="/hero.png"
-              alt="Pavithram Dairy Experience"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-            />
-          </div>
-
-          {/* Floating Glass Element */}
-          <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-10 left-[-40px] z-20 glass p-6 rounded-3xl hidden md:block"
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="text-xl text-white/90 leading-relaxed mb-12 max-w-lg font-light"
           >
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white">
-                <span className="text-2xl font-bold">14+</span>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-wider font-bold text-primary/60">Districts</p>
-                <p className="font-display font-bold text-lg">Kerala Presence</p>
-              </div>
-            </div>
+            For over two decades, Pavithram has been the embodiment of purity and tradition. Every drop of milk carries the essence of Kerala's finest farms, delivering uncompromising quality to discerning families.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-6 mb-16"
+          >
+            <Button size="lg" className="bg-accent text-black hover:bg-accent/90 rounded-lg px-10 h-14 text-base font-semibold shadow-xl">
+              Discover Collection
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold">
+              Our Heritage
+            </Button>
           </motion.div>
 
-          {/* Decorative Circle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-primary/10 rounded-full -z-10" />
+          {/* Luxury stats */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="grid grid-cols-3 gap-8 pt-12 border-t border-white/20"
+          >
+            {[
+              { number: "25+", label: "Years of Trust" },
+              { number: "50k+", label: "Happy Homes" },
+              { number: "#1", label: "Choice of Kerala" }
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-4xl font-serif text-accent mb-2">{stat.number}</div>
+                <p className="text-sm text-white/70 font-light">{stat.label}</p>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-white/50 rounded-full animate-bounce" />
+        </div>
+      </motion.div>
     </section>
   );
 };

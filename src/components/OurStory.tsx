@@ -1,77 +1,145 @@
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { Droplets, Heart, Leaf, CheckCircle } from "lucide-react";
 
 const OurStory = () => {
-  const highlights = [
-    { title: "Pure Cow Milk", desc: "Sourced daily from our partner farms." },
-    { title: "Modern Processing", desc: "State-of-the-art hygienic facilities." },
-    { title: "Tradition Kept", desc: "No preservatives, just pure goodness." },
+  const milestones = [
+    {
+      year: "1998",
+      title: "Heritage Founded",
+      description: "Started with a vision to bring pure, untouched dairy from Palakkad farms",
+      icon: Droplets,
+    },
+    {
+      year: "2005",
+      title: "Trust Expanded",
+      description: "Reached 10,000+ households with our A2 milk and heritage dairy products",
+      icon: Heart,
+    },
+    {
+      year: "2024",
+      title: "Pure Excellence",
+      description: "Now serving 50,000+ families with premium, certified dairy products across Kerala",
+      icon: Leaf,
+    }
+  ];
+
+  const values = [
+    { title: "100% Pure", desc: "No additives, preservatives, or artificial flavors" },
+    { title: "Farm Fresh", desc: "Direct from Palakkad farms to your table within 24 hours" },
+    { title: "Heritage Recipes", desc: "Traditional dairy craftsmanship passed down through generations" },
+    { title: "Community First", desc: "Supporting local farmers and empowering rural communities" }
   ];
 
   return (
-    <section id="our-story" className="py-32 overflow-hidden bg-white">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+    <section className="relative py-32 bg-secondary/20 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-10 w-72 h-72 bg-accent/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            {/* Magazine Style Image Grid */}
-            <div className="relative grid grid-cols-12 gap-4">
-              <div className="col-span-8 rounded-[2rem] overflow-hidden shadow-2xl z-10 translate-y-8">
-                <img src="/hero.png" alt="Dairy Farm" className="w-full h-full object-cover aspect-[4/5]" />
-              </div>
-              <div className="col-span-6 col-start-7 row-start-1 mt-20 -ml-12 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white z-20">
-                <img src="/logo.png" alt="Pavithram Quality" className="w-full h-full object-cover aspect-square bg-slate-50 p-8" />
-              </div>
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto text-center mb-24"
+        >
+          <div className="inline-block px-4 py-2 bg-accent/15 rounded-full border border-accent/40 mb-8">
+            <span className="text-accent font-serif text-sm uppercase tracking-widest">Our Heritage</span>
+          </div>
+          <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">
+            26 Years of <span className="text-accent">Liquid Gold</span>
+          </h2>
+          <p className="text-xl text-foreground/70 font-light">
+            From Palakkad's pristine farms to your family's table, maintaining the highest standards of purity and quality.
+          </p>
+        </motion.div>
 
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl -z-10" />
-              <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed mb-10">
-              <p>
-                From the lush green pastures of Palakkad, Pavithram brings to your table the most authentic and pure dairy experience. Our journey began with a simple mission: to provide every household with milk that’s as fresh as a morning at the farm.
-              </p>
-              <p>
-                We believe in the harmony of nature and technology. By partnering directly with local farmers and employing modern cold-chain logistics, we ensure that every drop of Pavithram milk retains its natural nutrients and traditional taste.
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-8 mb-12">
-              {highlights.map((item, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                    <CheckCircle2 size={24} />
+        {/* Timeline */}
+        <div className="mb-24">
+          <div className="grid md:grid-cols-3 gap-8">
+            {milestones.map((milestone, i) => {
+              const Icon = milestone.icon;
+              return (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15 }}
+                  className="relative"
+                >
+                  <div className="bg-card border border-accent/20 rounded-xl p-8 hover:border-accent/40 hover:bg-secondary/10 transition-all">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-accent" />
+                      </div>
+                      <h3 className="font-serif text-3xl text-accent">{milestone.year}</h3>
+                    </div>
+                    <h4 className="font-serif text-2xl text-foreground mb-3">{milestone.title}</h4>
+                    <p className="text-foreground/60 font-light leading-relaxed">{milestone.description}</p>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-primary mb-1">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
 
-            <div className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 flex items-start gap-6 italic">
-              <span className="text-6xl text-primary/10 font-serif leading-none">“</span>
-              <p className="text-primary/70 text-lg">
-                Our dairy excellence isn't just a business goal—it's a commitment to the health of our community and the prosperity of our farmers.
-              </p>
-            </div>
-          </motion.div>
+                  {i < milestones.length - 1 && (
+                    <div className="hidden md:block absolute right-0 top-1/2 w-8 h-0.5 bg-gradient-to-r from-accent/50 to-transparent translate-x-full transform -translate-y-1/2" />
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
+        {/* Story & Values */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="space-y-6 text-lg text-foreground/70 leading-relaxed mb-12 max-w-3xl">
+            <p>
+              From the lush green pastures of Palakkad, Pavithram brings to your table the most authentic and pure dairy experience. Our journey began with a simple mission: to provide every household with milk that's as fresh as a morning at the farm.
+            </p>
+            <p>
+              We believe in the harmony of nature and technology. By partnering directly with local farmers and employing modern cold-chain logistics, we ensure that every drop of Pavithram milk retains its natural nutrients and traditional taste.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {values.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-4 p-6 bg-secondary/30 border border-accent/15 rounded-lg hover:border-accent/40 transition-colors"
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent/15 flex items-center justify-center">
+                  <CheckCircle className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h4 className="font-serif text-foreground mb-1">{item.title}</h4>
+                  <p className="text-sm text-foreground/60">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="p-10 rounded-2xl bg-gradient-to-r from-accent/8 to-accent/5 border border-accent/20 flex items-start gap-6"
+        >
+          <span className="text-6xl text-accent/30 font-serif leading-none flex-shrink-0">"</span>
+          <p className="text-foreground/80 text-lg font-light italic leading-relaxed">
+            Our dairy excellence isn't just a business goal—it's a commitment to the health of our community and the prosperity of our farmers. Every bottle of Pavithram represents 26 years of unwavering dedication to quality and purity.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

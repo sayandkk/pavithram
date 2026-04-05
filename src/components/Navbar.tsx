@@ -9,7 +9,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  // Determine if we are on the homepage
   const isHome = location.pathname === "/";
 
   useEffect(() => {
@@ -21,19 +20,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 py-4 ${scrolled ? "top-2" : "top-0"}`}>
-      <nav className={`container mx-auto h-16 px-6 flex items-center justify-between rounded-full transition-all duration-500 ${scrolled ? "glass shadow-lg" : "bg-transparent"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-3 ${scrolled ? "bg-background/95 border-b border-accent/20 shadow-lg backdrop-blur" : "bg-background"}` }>
+      <nav className="container mx-auto h-16 px-0 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="p-1 rounded-full bg-white group-hover:scale-110 transition-transform duration-300">
-            <img src="/logo.png" alt="Pavithram Logo" className="h-10 w-10 object-contain" />
-          </div>
-          <span className={`font-display text-2xl font-bold tracking-tight transition-colors duration-300 ${!isHome || scrolled ? "text-primary" : "text-white"}`}>
-            Pavithram
-          </span>
+          <img src="/logo.png" alt="Pavithram" className="h-9 w-9 object-contain group-hover:scale-110 transition-transform" />
+          <span className={`font-serif text-2xl font-bold tracking-tight ${scrolled ? "text-accent" : "text-foreground"}`}>Pavithram</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-12">
           {["Products", "Our Story", "Manufacturing", "Distribution"].map((item) => {
             const isProductsLink = item === "Products";
             const href = isProductsLink ? "/products" : `/#${item.toLowerCase().replace(/ /g, "-")}`;
@@ -44,36 +39,37 @@ const Navbar = () => {
                 key={item}
                 to={isProductsLink ? href : undefined}
                 href={!isProductsLink ? href : undefined}
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-secondary relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-secondary after:transition-all hover:after:w-full ${!isHome || scrolled ? "text-primary/80" : "text-white/80"}`}
+                className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? "text-foreground/80 hover:text-accent" : "text-foreground/90 hover:text-accent"}`}
               >
                 {item}
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300 ${scrolled ? "w-0" : "w-0"}`} style={{width: "0"}} />
               </NavLink>
             );
           })}
-          <Button variant={scrolled ? "default" : "hero"} size="sm" className="rounded-full px-6">
-            Contact Us
+            <Button variant="default" size="sm" className="rounded-lg px-7 bg-accent text-foreground hover:bg-accent/90 font-semibold shadow-lg">
+            Contact
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className={`md:hidden p-2 rounded-full transition-colors ${!isHome || scrolled ? "text-primary hover:bg-black/5" : "text-white hover:bg-white/10"}`}
+          className={`md:hidden p-2 rounded transition-colors ${scrolled ? "text-foreground hover:bg-foreground/10" : "text-foreground hover:bg-foreground/10"}`}
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-24 left-4 right-4 md:hidden glass rounded-[2rem] p-8 shadow-2xl border border-white/40"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-20 left-4 right-4 md:hidden bg-background border border-accent/20 rounded-lg p-6 shadow-lg z-40"
           >
-            <div className="flex flex-col gap-6 text-center">
+            <div className="flex flex-col gap-4 text-center">
               {["Products", "Our Story", "Manufacturing", "Distribution"].map((item) => {
                 const isProductsLink = item === "Products";
                 const href = isProductsLink ? "/products" : `/#${item.toLowerCase().replace(/ /g, "-")}`;
@@ -84,15 +80,15 @@ const Navbar = () => {
                     key={item}
                     to={isProductsLink ? href : undefined}
                     href={!isProductsLink ? href : undefined}
-                    className="text-lg font-medium text-primary hover:text-secondary transition-colors"
+                    className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors py-3"
                     onClick={() => setOpen(false)}
                   >
                     {item}
                   </NavLink>
                 );
               })}
-              <Button variant="default" className="w-full rounded-full py-6 mt-4">
-                Contact Us
+              <Button variant="default" className="w-full rounded-lg py-5 mt-4 bg-accent text-foreground">
+                Contact
               </Button>
             </div>
           </motion.div>

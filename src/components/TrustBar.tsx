@@ -1,4 +1,5 @@
 import { ShieldCheck, Leaf, Package, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const items = [
   { icon: ShieldCheck, text: "FSSAI Certified", sub: "Lic: 11324009000952" },
@@ -9,15 +10,24 @@ const items = [
 
 const TrustBar = () => {
   return (
-    <section className="bg-primary py-4 border-y border-primary-foreground/10">
-      <div className="overflow-hidden">
-        <div className="flex animate-marquee whitespace-nowrap">
-          {[...items, ...items].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 mx-12 shrink-0">
-              <item.icon className="w-5 h-5 text-secondary" />
-              <span className="text-primary-foreground font-medium text-sm">{item.text}</span>
-              {item.sub && <span className="text-primary-foreground/50 text-xs">({item.sub})</span>}
-            </div>
+    <section className="bg-secondary/30 border-y border-accent/20 py-12 backdrop-blur">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-4 p-4 rounded-lg hover:bg-accent/10 transition-colors"
+            >
+              <item.icon className="w-6 h-6 text-accent shrink-0 mt-0.5" />
+              <div>
+                <p className="text-sm font-serif text-accent italic">{item.text}</p>
+                {item.sub && <p className="text-xs text-accent/70 mt-1">{item.sub}</p>}
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -24,59 +24,71 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-2xl">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-secondary font-bold tracking-widest uppercase text-sm mb-4"
-            >
-              Voices of Trust
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary"
-            >
-              Loved by Families, <br />
-              <span className="text-secondary italic">Trusted by Experts</span>
-            </motion.h2>
-          </div>
+    <section className="relative py-32 bg-secondary/15 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/3 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block px-4 py-2 bg-accent/10 border border-accent/30 text-accent text-sm font-light tracking-widest uppercase mb-8 rounded-full"
+          >
+            Trusted by Thousands
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-6xl font-serif text-foreground mb-6"
+          >
+            Stories of <span className="text-accent">Trust & Quality</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-foreground/70 max-w-2xl mx-auto font-light"
+          >
+            From families to experts, hear why Pavithram is the choice for premium dairy
+          </motion.p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="glass-card p-10 flex flex-col justify-between border-slate-100 hover:border-primary/10 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 relative group"
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              whileHover={{ y: -8 }}
+              className="bg-background border border-accent/20 p-10 rounded-xl hover:border-accent/40 hover:bg-secondary/10 transition-all flex flex-col justify-between relative group"
             >
-              <Quote className="absolute top-8 right-8 text-primary/5 w-20 h-20 group-hover:text-primary/10 transition-colors duration-500" />
+              <Quote className="absolute top-6 right-6 text-accent/10 w-16 h-16 group-hover:text-accent/20 transition-colors duration-300" />
 
               <div>
                 <div className="flex gap-1 mb-8">
                   {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-secondary text-secondary" />
+                    <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <p className="text-primary/80 font-medium italic text-lg leading-relaxed mb-8 relative z-10">"{t.quote}"</p>
+                <p className="text-foreground/80 font-light italic text-lg leading-relaxed mb-8 relative z-10">" {t.quote}"</p>
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl overflow-hidden shadow-lg border-2 border-white">
+                <div className="w-14 h-14 rounded-lg overflow-hidden border-2 border-accent/30 shrink-0">
                   <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-display font-bold text-primary text-lg">{t.name}</p>
-                  <p className="text-muted-foreground text-xs font-bold uppercase tracking-wider">{t.role}</p>
+                  <p className="font-serif font-bold text-foreground">{t.name}</p>
+                  <p className="text-foreground/70 text-xs font-light uppercase tracking-wider">{t.role}</p>
                 </div>
               </div>
             </motion.div>

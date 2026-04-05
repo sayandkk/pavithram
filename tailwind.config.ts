@@ -55,10 +55,10 @@ export default {
         gold: "hsl(var(--gold))",
         "gold-light": "hsl(var(--gold-light))",
         cream: "hsl(var(--cream))",
-        forest: "#1B5E20",
-        "forest-light": "#2E7D32",
-        earth: "#388E3C",
-        spice: "#4CAF50",
+        forest: "#3D2817",
+        "forest-light": "#5A3F2A",
+        earth: "#D4A574",
+        spice: "#E8B859",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -76,8 +76,8 @@ export default {
         sm: "0.5rem",
       },
       boxShadow: {
-        glass: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-        "glass-sm": "0 4px 16px 0 rgba(31, 38, 135, 0.2)",
+        glass: "0 8px 32px 0 rgba(37, 28, 20, 0.15)",
+        "glass-sm": "0 4px 16px 0 rgba(37, 28, 20, 0.08)",
       },
       keyframes: {
         "accordion-down": {
