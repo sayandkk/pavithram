@@ -31,7 +31,9 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mb-8"
           >
-            <p className="text-accent font-serif text-xl italic mb-4">Heritage Since 1998</p>
+            <p className="text-accent font-serif text-xl italic mb-4">
+              Heritage Since 1998
+            </p>
             <div className="w-12 h-1 bg-accent rounded-full mb-8" />
           </motion.div>
 
@@ -45,7 +47,10 @@ const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl text-white/90 leading-relaxed mb-12 max-w-lg font-light"
           >
-            For over two decades, Pavithram has been the embodiment of purity and tradition. Every drop of milk carries the essence of Kerala's finest farms, delivering uncompromising quality to discerning families.
+            For over two decades, Pavithram has been the embodiment of purity
+            and tradition. Every drop of milk carries the essence of Kerala's
+            finest farms, delivering uncompromising quality to discerning
+            families.
           </motion.p>
 
           <motion.div
@@ -54,10 +59,17 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="flex flex-col sm:flex-row gap-6 mb-16"
           >
-            <Button size="lg" className="bg-accent text-black hover:bg-accent/90 rounded-lg px-10 h-14 text-base font-semibold shadow-xl">
+            <Button
+              size="lg"
+              className="bg-accent text-black hover:bg-accent/90 rounded-lg px-10 h-14 text-base font-semibold shadow-xl"
+            >
               Discover Collection
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold"
+            >
               Our Heritage
             </Button>
           </motion.div>
@@ -72,10 +84,12 @@ const HeroSection = () => {
             {[
               { number: "25+", label: "Years of Trust" },
               { number: "50k+", label: "Happy Homes" },
-              { number: "#1", label: "Choice of Kerala" }
+              { number: "#1", label: "Choice of Kerala" },
             ].map((stat, i) => (
               <div key={i}>
-                <div className="text-4xl font-serif text-accent mb-2">{stat.number}</div>
+                <div className="text-4xl font-serif text-accent mb-2">
+                  {stat.number}
+                </div>
                 <p className="text-sm text-white/70 font-light">{stat.label}</p>
               </div>
             ))}

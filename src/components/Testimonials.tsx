@@ -5,19 +5,22 @@ const testimonials = [
   {
     name: "Arun Varma",
     role: "Proprietor, Grand Supermarket, Palakkad",
-    quote: "The shelf life and freshness of Pavithram Milk are unparalleled. Our customers specifically ask for it every morning. The quality is simply consistent.",
+    quote:
+      "The shelf life and freshness of Pavithram Milk are unparalleled. Our customers specifically ask for it every morning. The quality is simply consistent.",
     avatar: "https://i.pravatar.cc/150?u=1",
   },
   {
     name: "Meera Menon",
     role: "Health & Nutrition Expert",
-    quote: "I always recommend Pavithram to my clients. It's rare to find dairy products that maintain such traditional purity without any artificial additives.",
+    quote:
+      "I always recommend Pavithram to my clients. It's rare to find dairy products that maintain such traditional purity without any artificial additives.",
     avatar: "https://i.pravatar.cc/150?u=2",
   },
   {
     name: "Deepak S.",
     role: "Cloud Kitchen Owner, Kochi",
-    quote: "The consistency of Pavithram Ghee is fantastic for our professional kitchen. The aroma and purity take our traditional dishes to another level.",
+    quote:
+      "The consistency of Pavithram Ghee is fantastic for our professional kitchen. The aroma and purity take our traditional dishes to another level.",
     avatar: "https://i.pravatar.cc/150?u=3",
   },
 ];
@@ -56,7 +59,8 @@ const Testimonials = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-foreground/70 max-w-2xl mx-auto font-light"
           >
-            From families to experts, hear why Pavithram is the choice for premium dairy
+            From families to experts, hear why Pavithram is the choice for
+            premium dairy
           </motion.p>
         </div>
 
@@ -79,16 +83,26 @@ const Testimonials = () => {
                     <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <p className="text-foreground/80 font-light italic text-lg leading-relaxed mb-8 relative z-10">" {t.quote}"</p>
+                <p className="text-foreground/80 font-light italic text-lg leading-relaxed mb-8 relative z-10">
+                  " {t.quote}"
+                </p>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-lg overflow-hidden border-2 border-accent/30 shrink-0">
-                  <img src={t.avatar} alt={t.name} className="w-full h-full object-cover" />
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
-                  <p className="font-serif font-bold text-foreground">{t.name}</p>
-                  <p className="text-foreground/70 text-xs font-light uppercase tracking-wider">{t.role}</p>
+                  <p className="font-serif font-bold text-foreground">
+                    {t.name}
+                  </p>
+                  <p className="text-foreground/70 text-xs font-light uppercase tracking-wider">
+                    {t.role}
+                  </p>
                 </div>
               </div>
             </motion.div>

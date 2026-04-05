@@ -18,14 +18,16 @@ const CategoryShowcase = () => {
             viewport={{ once: true }}
             className="inline-block px-4 py-2 bg-accent/10 rounded-full border border-accent/30 mb-8"
           >
-            <span className="text-accent font-serif text-sm uppercase tracking-widest">Our Collection</span>
+            <span className="text-accent font-serif text-sm uppercase tracking-widest">
+              Our Collection
+            </span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-              className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight\"
+            className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight\"
           >
             Explore Premium <span className="text-accent">Dairy Range</span>
           </motion.h2>
@@ -36,7 +38,8 @@ const CategoryShowcase = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-foreground/70 font-light\"
           >
-            From farm-fresh A2 milk to traditional golden ghee, discover premium dairy crafted with heritage care.
+            From farm-fresh A2 milk to traditional golden ghee, discover premium
+            dairy crafted with heritage care.
           </motion.p>
         </div>
 
@@ -54,13 +57,19 @@ const CategoryShowcase = () => {
               <div className="relative bg-primary/80 border border-accent/20 rounded-xl p-10 h-full flex flex-col items-center justify-center text-center hover:border-accent/40 hover:bg-primary/90 transition-all duration-300 overflow-hidden">
                 <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-accent to-accent/50 flex items-center justify-center text-5xl mb-8 group-hover:scale-110 transition-all duration-300 shadow-lg">
                   {cat.image ? (
-                    <img src={cat.image} alt={cat.name} className="w-full h-full object-cover rounded-2xl" />
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
                   ) : (
                     cat.icon
                   )}
                 </div>
 
-                <h3 className="font-serif font-bold text-white text-2xl mb-3 group-hover:text-accent transition-colors">{cat.name}</h3>
+                <h3 className="font-serif font-bold text-white text-2xl mb-3 group-hover:text-accent transition-colors">
+                  {cat.name}
+                </h3>
                 <p className="text-white/70 font-light text-sm mb-6">
                   {cat.count} Premium Items
                 </p>

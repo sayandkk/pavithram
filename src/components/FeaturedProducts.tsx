@@ -21,7 +21,9 @@ const FeaturedProducts = () => {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 rounded-full border border-accent/30 mb-6"
             >
-              <span className="text-accent font-serif text-sm uppercase tracking-widest">Featured Selection</span>
+              <span className="text-accent font-serif text-sm uppercase tracking-widest">
+                Featured Selection
+              </span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -58,7 +60,11 @@ const FeaturedProducts = () => {
               {/* Image Container */}
               <div className="relative aspect-square rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden mb-6 flex items-center justify-center">
                 <span className="text-7xl group-hover:scale-110 transition-transform duration-300">
-                  {product.category === "Milk" ? "🥛" : product.category === "Ghee" ? "🧈" : "🥣"}
+                  {product.category === "Milk"
+                    ? "🥛"
+                    : product.category === "Ghee"
+                      ? "🧈"
+                      : "🥣"}
                 </span>
               </div>
 
@@ -67,11 +73,17 @@ const FeaturedProducts = () => {
                   <span className="text-[11px] uppercase tracking-wider font-light px-3 py-1 bg-accent/10 text-accent rounded-full">
                     {product.category}
                   </span>
-                  <span className="text-[10px] text-foreground/60 font-light uppercase">{product.packSizes.split(',')[0]}</span>
+                  <span className="text-[10px] text-foreground/60 font-light uppercase">
+                    {product.packSizes.split(",")[0]}
+                  </span>
                 </div>
 
-                <h3 className="font-serif font-bold text-foreground text-lg mb-2 group-hover:text-accent transition-colors line-clamp-1">{product.name}</h3>
-                <p className="text-foreground/70 text-sm line-clamp-2 leading-relaxed mb-6 font-light">{product.description}</p>
+                <h3 className="font-serif font-bold text-foreground text-lg mb-2 group-hover:text-accent transition-colors line-clamp-1">
+                  {product.name}
+                </h3>
+                <p className="text-foreground/70 text-sm line-clamp-2 leading-relaxed mb-6 font-light">
+                  {product.description}
+                </p>
 
                 <motion.button
                   whileHover={{ scale: 1.02 }}

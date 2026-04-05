@@ -24,8 +24,12 @@ const TrustBar = () => {
             >
               <item.icon className="w-6 h-6 text-accent shrink-0 mt-0.5" />
               <div>
-                <p className="text-sm font-serif text-accent italic">{item.text}</p>
-                {item.sub && <p className="text-xs text-accent/70 mt-1">{item.sub}</p>}
+                <p className="text-sm font-serif text-accent italic">
+                  {item.text}
+                </p>
+                {item.sub && (
+                  <p className="text-xs text-accent/70 mt-1">{item.sub}</p>
+                )}
               </div>
             </motion.div>
           ))}

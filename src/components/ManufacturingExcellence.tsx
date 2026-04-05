@@ -5,19 +5,22 @@ const steps = [
   {
     icon: Trees,
     title: "Eco-Sourcing",
-    description: "Our milk comes from cows raised in organic, pesticide-free pastures of Palakkad, ensuring the purest starting point.",
+    description:
+      "Our milk comes from cows raised in organic, pesticide-free pastures of Palakkad, ensuring the purest starting point.",
     color: "from-emerald-500 to-teal-500",
   },
   {
     icon: Factory,
     title: "Smart Processing",
-    description: "World-class automated systems ensuring highest standards while preserving natural nutrients and freshness.",
+    description:
+      "World-class automated systems ensuring highest standards while preserving natural nutrients and freshness.",
     color: "from-accent to-accent/70",
   },
   {
     icon: ShieldCheck,
     title: "Purity Testing",
-    description: "Every batch undergoes 24+ rigorous quality checks in certified labs before reaching your doorstep.",
+    description:
+      "Every batch undergoes 24+ rigorous quality checks in certified labs before reaching your doorstep.",
     color: "from-accent/80 to-amber-400",
   },
 ];
@@ -39,7 +42,9 @@ const ManufacturingExcellence = () => {
               viewport={{ once: true }}
               className="inline-block px-4 py-2 bg-accent/10 rounded-full border border-accent/30 mb-8"
             >
-              <span className="text-accent font-serif text-sm uppercase tracking-widest">Manufacturing Excellence</span>
+              <span className="text-accent font-serif text-sm uppercase tracking-widest">
+                Manufacturing Excellence
+              </span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -66,29 +71,36 @@ const ManufacturingExcellence = () => {
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
-            <motion.div
-              key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.6 }}
-              whileHover={{ y: -8 }}
-              className="bg-primary/80 border border-accent/20 p-10 rounded-xl hover:border-accent/40 transition-all"
-            >
-              <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center mb-8 text-foreground shadow-lg`}>
-                <Icon className="w-8 h-8" />
-              </div>
-              <h3 className="font-serif font-bold text-foreground text-2xl mb-4">{step.title}</h3>
-              <p className="text-foreground/70 text-base leading-relaxed mb-8 font-light">{step.description}</p>
-
-              <motion.button
-                whileHover={{ x: 4 }}
-                className="flex items-center gap-2 text-accent font-light text-sm uppercase tracking-wider hover:text-accent/80 transition-colors"
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
+                whileHover={{ y: -8 }}
+                className="bg-primary/80 border border-accent/20 p-10 rounded-xl hover:border-accent/40 transition-all"
               >
-                Learn More <ArrowRight size={16} />
-              </motion.button>
-            </motion.div>
-          )})}
+                <div
+                  className={`w-16 h-16 rounded-lg bg-gradient-to-br ${step.color} flex items-center justify-center mb-8 text-foreground shadow-lg`}
+                >
+                  <Icon className="w-8 h-8" />
+                </div>
+                <h3 className="font-serif font-bold text-foreground text-2xl mb-4">
+                  {step.title}
+                </h3>
+                <p className="text-foreground/70 text-base leading-relaxed mb-8 font-light">
+                  {step.description}
+                </p>
+
+                <motion.button
+                  whileHover={{ x: 4 }}
+                  className="flex items-center gap-2 text-accent font-light text-sm uppercase tracking-wider hover:text-accent/80 transition-colors"
+                >
+                  Learn More <ArrowRight size={16} />
+                </motion.button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

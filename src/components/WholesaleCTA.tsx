@@ -35,7 +35,8 @@ const WholesaleCTA = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-7xl font-display font-bold text-foreground mb-8 leading-tight"
           >
-            Grow Your Business with <span className="text-accent italic">Pavithram</span>
+            Grow Your Business with{" "}
+            <span className="text-accent italic">Pavithram</span>
           </motion.h2>
 
           <motion.p
@@ -45,7 +46,9 @@ const WholesaleCTA = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Join Kerala's fastest-growing dairy network. Whether you are a retailer, distributor, or institution, we offer premium quality and reliable delivery.
+            Join Kerala's fastest-growing dairy network. Whether you are a
+            retailer, distributor, or institution, we offer premium quality and
+            reliable delivery.
           </motion.p>
 
           <div className="grid sm:grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto">
@@ -54,9 +57,14 @@ const WholesaleCTA = () => {
               { icon: Building2, label: "Wholesale" },
               { icon: Users, label: "Institutions" },
             ].map((item, i) => (
-              <div key={i} className="bg-background p-6 rounded-2xl flex flex-col items-center gap-4 border border-accent/20 group hover:border-accent/50 transition-all duration-300">
+              <div
+                key={i}
+                className="bg-background p-6 rounded-2xl flex flex-col items-center gap-4 border border-accent/20 group hover:border-accent/50 transition-all duration-300"
+              >
                 <item.icon className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
-                <span className="text-foreground font-bold tracking-wider">{item.label}</span>
+                <span className="text-foreground font-bold tracking-wider">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>
@@ -66,7 +74,10 @@ const WholesaleCTA = () => {
             className="rounded-full px-12 h-16 text-lg bg-accent hover:bg-accent/90 hover:text-white transition-all duration-500 shadow-2xl shadow-accent/20 group font-bold"
           >
             Become a Partner
-            <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" size={24} />
+            <ArrowRight
+              className="ml-3 group-hover:translate-x-2 transition-transform"
+              size={24}
+            />
           </Button>
         </motion.div>
       </div>

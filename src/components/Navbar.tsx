@@ -20,33 +20,54 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-3 ${scrolled ? "bg-background/95 border-b border-accent/20 shadow-lg backdrop-blur" : "bg-background"}` }>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-3 ${scrolled ? "bg-background/95 border-b border-accent/20 shadow-lg backdrop-blur" : "bg-background"}`}
+    >
       <nav className="container mx-auto h-16 px-0 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src="/logo.png" alt="Pavithram" className="h-9 w-9 object-contain group-hover:scale-110 transition-transform" />
-          <span className={`font-serif text-2xl font-bold tracking-tight ${scrolled ? "text-accent" : "text-foreground"}`}>Pavithram</span>
+          <img
+            src="/logo.png"
+            alt="Pavithram"
+            className="h-9 w-9 object-contain group-hover:scale-110 transition-transform"
+          />
+          <span
+            className={`font-serif text-2xl font-bold tracking-tight ${scrolled ? "text-accent" : "text-foreground"}`}
+          >
+            Pavithram
+          </span>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-12">
-          {["Products", "Our Story", "Manufacturing", "Distribution"].map((item) => {
-            const isProductsLink = item === "Products";
-            const href = isProductsLink ? "/products" : `/#${item.toLowerCase().replace(/ /g, "-")}`;
-            const NavLink = isProductsLink ? Link : "a";
+          {["Products", "Our Story", "Manufacturing", "Distribution"].map(
+            (item) => {
+              const isProductsLink = item === "Products";
+              const href = isProductsLink
+                ? "/products"
+                : `/#${item.toLowerCase().replace(/ /g, "-")}`;
+              const NavLink = isProductsLink ? Link : "a";
 
-            return (
-              <NavLink
-                key={item}
-                to={isProductsLink ? href : undefined}
-                href={!isProductsLink ? href : undefined}
-                className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? "text-foreground/80 hover:text-accent" : "text-foreground/90 hover:text-accent"}`}
-              >
-                {item}
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300 ${scrolled ? "w-0" : "w-0"}`} style={{width: "0"}} />
-              </NavLink>
-            );
-          })}
-            <Button variant="default" size="sm" className="rounded-lg px-7 bg-accent text-foreground hover:bg-accent/90 font-semibold shadow-lg">
+              return (
+                <NavLink
+                  key={item}
+                  to={isProductsLink ? href : undefined}
+                  href={!isProductsLink ? href : undefined}
+                  className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? "text-foreground/80 hover:text-accent" : "text-foreground/90 hover:text-accent"}`}
+                >
+                  {item}
+                  <span
+                    className={`absolute bottom-0 left-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300 ${scrolled ? "w-0" : "w-0"}`}
+                    style={{ width: "0" }}
+                  />
+                </NavLink>
+              );
+            },
+          )}
+          <Button
+            variant="default"
+            size="sm"
+            className="rounded-lg px-7 bg-accent text-foreground hover:bg-accent/90 font-semibold shadow-lg"
+          >
             Contact
           </Button>
         </div>
@@ -70,24 +91,31 @@ const Navbar = () => {
             className="absolute top-20 left-4 right-4 md:hidden bg-background border border-accent/20 rounded-lg p-6 shadow-lg z-40"
           >
             <div className="flex flex-col gap-4 text-center">
-              {["Products", "Our Story", "Manufacturing", "Distribution"].map((item) => {
-                const isProductsLink = item === "Products";
-                const href = isProductsLink ? "/products" : `/#${item.toLowerCase().replace(/ /g, "-")}`;
-                const NavLink = isProductsLink ? Link : "a";
+              {["Products", "Our Story", "Manufacturing", "Distribution"].map(
+                (item) => {
+                  const isProductsLink = item === "Products";
+                  const href = isProductsLink
+                    ? "/products"
+                    : `/#${item.toLowerCase().replace(/ /g, "-")}`;
+                  const NavLink = isProductsLink ? Link : "a";
 
-                return (
-                  <NavLink
-                    key={item}
-                    to={isProductsLink ? href : undefined}
-                    href={!isProductsLink ? href : undefined}
-                    className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors py-3"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item}
-                  </NavLink>
-                );
-              })}
-              <Button variant="default" className="w-full rounded-lg py-5 mt-4 bg-accent text-foreground">
+                  return (
+                    <NavLink
+                      key={item}
+                      to={isProductsLink ? href : undefined}
+                      href={!isProductsLink ? href : undefined}
+                      className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors py-3"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item}
+                    </NavLink>
+                  );
+                },
+              )}
+              <Button
+                variant="default"
+                className="w-full rounded-lg py-5 mt-4 bg-accent text-foreground"
+              >
                 Contact
               </Button>
             </div>
