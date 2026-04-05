@@ -15,6 +15,15 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Lovable" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script>
+      // Force light theme: remove any lingering `dark` class and prefer light color scheme.
+      try {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } catch (e) {
+        /* ignore */
+      }
+    </script>
   </head>
 
   <body>
