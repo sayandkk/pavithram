@@ -59,13 +59,11 @@ const FeaturedProducts = () => {
             >
               {/* Image Container */}
               <div className="relative aspect-square rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden mb-6 flex items-center justify-center">
-                <span className="text-7xl group-hover:scale-110 transition-transform duration-300">
-                  {product.category === "Milk"
-                    ? "🥛"
-                    : product.category === "Ghee"
-                      ? "🧈"
-                      : "🥣"}
-                </span>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
 
               <div>

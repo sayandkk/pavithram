@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-20">
       {/* Full Background Image - starts after navbar */}
       <div className="absolute inset-0 w-full h-full top-0 z-0">
         <img
@@ -31,9 +31,7 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="mb-8"
           >
-            <p className="text-accent font-serif text-xl italic mb-4">
-              Heritage Since 1998
-            </p>
+            <p className="text-accent font-serif text-xl italic mb-4"></p>
             <div className="w-12 h-1 bg-accent rounded-full mb-8" />
           </motion.div>
 

@@ -66,7 +66,7 @@ const Products = () => {
                                 <div className="relative">
                                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/10 rounded-3xl blur-2xl" />
                                     <img
-                                        src="/assets/fresh-milk.jpeg"
+                                        src="/products/pavitram%20milk.png"
                                         alt="Fresh Milk"
                                         className="relative rounded-3xl shadow-2xl object-cover w-full h-96"
                                     />
@@ -167,9 +167,11 @@ const Products = () => {
 
                                         {/* Product Icon/Image */}
                                         <div className="relative h-56 bg-gradient-to-br from-secondary/40 via-background to-secondary/20 flex items-center justify-center overflow-hidden border-b border-accent/10">
-                                            <span className="text-8xl group-hover:scale-125 transition-transform duration-500">
-                                                {categoryEmojis[product.category] || "📦"}
-                                            </span>
+                                            <img
+                                              src={product.image}
+                                              alt={product.name}
+                                              className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-500"
+                                            />
                                             <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                         </div>
 
