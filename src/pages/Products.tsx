@@ -68,8 +68,8 @@ const Products = () => {
                                     <div className="relative">
                                         <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/10 rounded-3xl blur-2xl" />
                                         <img
-                                            src="/products/pavitram%20milk.png"
-                                            alt="Fresh Milk"
+                                            src="/hero.png"
+                                            alt="Premium Dairy"
                                             className="relative rounded-3xl shadow-2xl object-cover w-full h-96"
                                         />
                                     </div>

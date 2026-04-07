@@ -6,6 +6,7 @@ export interface Product {
   description: string;
   image: string;
   variantDescriptions?: Record<string, string>;
+  variantImages?: Record<string, string>;
 }
 
 export const products: Product[] = [
@@ -20,6 +21,9 @@ export const products: Product[] = [
     variantDescriptions: {
       "TM": "Fresh and nutritious toned milk with balanced fat content. Perfect for daily consumption, tea, coffee, and cooking. Ensures a healthy lifestyle with great taste.",
       "SM": "Rich and creamy milk with higher fat content, ideal for families. Best suited for drinking, making desserts, and enhancing flavor in every meal."
+    },
+    variantImages: {
+      "TM": "/products/toned.png"
     }
   },
   {
@@ -34,6 +38,9 @@ export const products: Product[] = [
       "Bottle Curd": "Conveniently packed curd for easy storage and usage. Maintains freshness and taste for everyday needs.",
       "KT": "KT Curd Range: Affordable and consistent quality curd options designed for daily consumption without compromising taste.",
       "Curd": "Fresh, smooth, and naturally fermented curd made from high-quality milk. Supports digestion and adds richness to your meals."
+    },
+    variantImages: {
+      "Thick Curd": "/products/thick%20curd.png"
     }
   },
   {
@@ -74,6 +81,10 @@ export const products: Product[] = [
       "Thick Curd": "Rich, thick, and creamy curd perfect for premium dishes and large-scale serving needs.",
       "Curd": "Freshly prepared curd with smooth texture, ideal for bulk consumption in hotels and catering services.",
       "Butter Milk": "Refreshing and light drink made from curd, perfect for cooling and hydration in bulk supply."
+    },
+    variantImages: {
+      "Toned Milk": "/products/toned.png",
+      "Thick Curd": "/products/thick%20curd.png"
     }
   },
   {

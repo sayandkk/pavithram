@@ -42,6 +42,10 @@ const ProductDetail = () => {
 
     const variants = product.packSizes.split(",").map(v => v.trim());
 
+    const currentImage = product.variantImages && Object.keys(product.variantImages).find(key => selectedVariant.includes(key))
+        ? product.variantImages[Object.keys(product.variantImages).find(key => selectedVariant.includes(key))!]
+        : product.image;
+
     return (
         <PageWrapper>
             <div className="min-h-screen bg-background flex flex-col">
@@ -72,7 +76,8 @@ const ProductDetail = () => {
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent mix-blend-multiply" />
                                 <img
-                                    src={product.image}
+                                    src={currentImage}
+                                    key={currentImage}
                                     alt={product.name}
                                     className="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                                 />
