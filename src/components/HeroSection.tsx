@@ -36,20 +36,14 @@ const HeroSection = () => {
             <div className="w-12 h-1 bg-accent rounded-full mb-8" />
           </motion.div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-tight mb-8 tracking-tight">
-            Pure by Nature. <br /> Perfect by Choice.
-          </h1>
-
-          <motion.p
+          <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl text-white/90 leading-relaxed mb-12 max-w-lg mx-auto font-light"
+            className="text-3xl md:text-5xl text-white leading-tight mb-12 max-w-3xl mx-auto font-serif tracking-tight"
           >
-            For over two decades, Pavithram has been the embodiment of purity
-            and tradition. Every drop of milk carries the essence of Kerala's
-            finest farms.
-          </motion.p>
+            Pure by Nature. <br /> Perfect by Choice.
+          </motion.h1>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +61,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Luxury stats */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8 }}
@@ -85,7 +79,7 @@ const HeroSection = () => {
                 <p className="text-sm text-white/70 font-light">{stat.label}</p>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
 
