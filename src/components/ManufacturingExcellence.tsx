@@ -12,7 +12,7 @@ const ManufacturingExcellence = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Heading & Feature Card */}
           <div className="lg:col-span-5 space-y-12">
             <div className="space-y-6">
@@ -27,7 +27,7 @@ const ManufacturingExcellence = () => {
                   Manufacturing Excellence
                 </span>
               </motion.div>
-              
+
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -35,11 +35,11 @@ const ManufacturingExcellence = () => {
                 transition={{ delay: 0.1 }}
                 className="text-5xl md:text-7xl font-serif text-foreground leading-[1.1]"
               >
-                Technology <br /> 
-                <span className="text-accent italic">Meets</span> <br /> 
-                Heritage
+                Technology <br />
+                <span className="text-accent italic">Meets</span> <br />
+                Legacy
               </motion.h2>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const ManufacturingExcellence = () => {
                 transition={{ delay: 0.2 }}
                 className="text-lg text-foreground/60 font-light max-w-md leading-relaxed"
               >
-                We bridge the gap between traditional dairy wisdom and future-ready 
+                We bridge the gap between traditional dairy wisdom and future-ready
                 automation to ensure every drop is as pure as nature intended.
               </motion.p>
             </div>
@@ -61,14 +61,14 @@ const ManufacturingExcellence = () => {
               className="group relative rounded-3xl overflow-hidden bg-secondary/10 border border-accent/20 p-8 pt-24 aspect-[4/5] lg:aspect-square flex flex-col justify-end"
             >
               <div className="absolute inset-0 z-0">
-                <img 
-                  src="/hero.png" 
-                  alt="Modern Facility" 
+                <img
+                  src="/hero.png"
+                  alt="Modern Facility"
                   className="w-full h-full object-cover opacity-30 grayscale group-hover:scale-110 group-hover:opacity-50 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               </div>
-              
+
               <div className="relative z-10 space-y-4">
                 <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center text-primary shadow-lg shadow-accent/20">
                   <Factory size={24} />
@@ -78,9 +78,9 @@ const ManufacturingExcellence = () => {
                   Our Palakkad facility utilizes world-class automated systems that preserve natural nutrients while ensuring zero human contact.
                 </p>
                 <div className="pt-4">
-                   <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
-                     Learn Process <ArrowUpRight size={16} />
-                   </div>
+                  <div className="flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest">
+                    Learn Process <ArrowUpRight size={16} />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -88,7 +88,7 @@ const ManufacturingExcellence = () => {
 
           {/* Right Column: Dynamic Grid */}
           <div className="lg:col-span-7 grid sm:grid-cols-2 gap-8 lg:pt-24">
-            
+
             {/* Step 1: Eco-Sourcing */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -104,7 +104,7 @@ const ManufacturingExcellence = () => {
                 </div>
                 <h4 className="text-2xl font-serif text-foreground">Eco-Sourcing</h4>
                 <p className="text-foreground/70 font-light leading-relaxed text-sm">
-                  Cows raised in organic, pesticide-free pastures of Palakkad, 
+                  Cows raised in organic, pesticide-free pastures of Palakkad,
                   ensuring the purest starting point for every product.
                 </p>
                 <div className="h-0.5 w-8 bg-accent/30 group-hover:w-full transition-all duration-500" />
@@ -126,7 +126,7 @@ const ManufacturingExcellence = () => {
                 </div>
                 <h4 className="text-2xl font-serif text-foreground">24+ Quality Checks</h4>
                 <p className="text-foreground/70 font-light leading-relaxed text-sm">
-                  Every batch undergoes rigorous quality checks in certified labs 
+                  Every batch undergoes rigorous quality checks in certified labs
                   before it earns the Pavithram seal of purity.
                 </p>
                 <div className="h-0.5 w-8 bg-accent/30 group-hover:w-full transition-all duration-500" />
@@ -147,7 +147,7 @@ const ManufacturingExcellence = () => {
                 </div>
                 <h4 className="text-2xl font-serif text-foreground">Cold Chain</h4>
                 <p className="text-foreground/70 font-light leading-relaxed text-sm">
-                  Advanced refrigeration networks maintaining freshness from farm to 
+                  Advanced refrigeration networks maintaining freshness from farm to
                   table, preserving every ounce of nutritional value.
                 </p>
                 <div className="h-0.5 w-8 bg-accent/30 group-hover:w-full transition-all duration-500" />

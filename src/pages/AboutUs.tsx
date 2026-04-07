@@ -7,18 +7,18 @@ const AboutUs = () => {
   return (
     <PageWrapper>
       <div className="min-h-screen bg-background text-foreground">
-        
+
         {/* Hero Section */}
         <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img 
-              src="/hero.png" 
-              alt="Pavithram Heritage" 
+            <img
+              src="/hero.png"
+              alt="Pavithram Legacy"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
           </div>
-          
+
           <div className="container mx-auto px-6 relative z-10 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -44,9 +44,9 @@ const AboutUs = () => {
                 className="relative"
               >
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="/products/pavitram milk.png" 
-                    alt="Pavithram Quality" 
+                  <img
+                    src="/products/pavitram milk.png"
+                    alt="Pavithram Quality"
                     className="w-full h-full object-contain bg-secondary/20 p-12"
                   />
                 </div>
@@ -64,11 +64,11 @@ const AboutUs = () => {
                   <span className="text-accent font-serif uppercase tracking-widest text-sm">Born in Palakkad</span>
                   <h2 className="text-4xl md:text-5xl font-serif leading-tight">Trusted Goodness for <span className="text-accent">26 Years</span></h2>
                 </div>
-                
+
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
                   For over two decades, Pavithram has been synonymous with dairy purity in Kerala. Founded in 1998, our journey began with a simple vision: to bring the freshness of the farm directly to your doorstep without compromising on quality or tradition.
                 </p>
-                
+
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
                   Today, we stand as one of the most trusted dairy brands, serving thousands of families daily with milk, curd, ghee, and traditional dairy products that taste just like home.
                 </p>
@@ -119,7 +119,7 @@ const AboutUs = () => {
                 </div>
                 <h3 className="text-3xl font-serif mb-6">Our Vision</h3>
                 <p className="text-foreground/70 leading-relaxed font-light">
-                  To be the gold standard in the Indian dairy industry, recognized for our unwavering commitment to quality, innovation in manufacturing, and respect for the heritage of dairy farming.
+                  To be the gold standard in the Indian dairy industry, recognized for our unwavering commitment to quality, innovation in manufacturing, and respect for the Legacy of dairy farming.
                 </p>
               </motion.div>
             </div>
@@ -168,7 +168,7 @@ const AboutUs = () => {
               Discover why thousands of families trust Pavithram for their daily nutrition.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <button 
+              <button
                 onClick={() => window.open(`https://wa.me/917034508354`, "_blank")}
                 className="px-10 py-4 bg-accent text-white rounded-full font-bold shadow-xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-300"
               >

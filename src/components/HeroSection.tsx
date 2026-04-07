@@ -71,7 +71,7 @@ const HeroSection = () => {
               variant="outline"
               className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold"
             >
-              Our Heritage
+              Our Legacy
             </Button> */}
           </motion.div>
 

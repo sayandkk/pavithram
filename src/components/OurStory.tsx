@@ -5,7 +5,7 @@ const OurStory = () => {
   const milestones = [
     {
       year: "1998",
-      title: "Heritage Founded",
+      title: "Legacy Founded",
       description:
         "Started with a vision to bring pure, untouched dairy from Palakkad farms",
       icon: Droplets,
@@ -14,7 +14,7 @@ const OurStory = () => {
       year: "2005",
       title: "Trust Expanded",
       description:
-        "Reached 10,000+ households with our A2 milk and heritage dairy products",
+        "Reached 10,000+ households with our A2 milk and Legacy dairy products",
       icon: Heart,
     },
     {
@@ -36,7 +36,7 @@ const OurStory = () => {
       desc: "Direct from Palakkad farms to your table within 24 hours",
     },
     {
-      title: "Heritage Recipes",
+      title: "Legacy Recipes",
       desc: "Traditional dairy craftsmanship passed down through generations",
     },
     {
@@ -62,7 +62,7 @@ const OurStory = () => {
         >
           <div className="inline-block px-4 py-2 bg-accent/15 rounded-full border border-accent/40 mb-8">
             <span className="text-accent font-serif text-sm uppercase tracking-widest">
-              Our Heritage
+              Our Legacy
             </span>
           </div>
           <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">

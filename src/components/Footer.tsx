@@ -30,7 +30,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-foreground/70 text-sm leading-relaxed font-light mb-8">
-              Crafting Trusted Goodness from Palakkad's heritage dairy farms. Trusted
+              Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Trusted
               by Kerala since 1998.
             </p>
             <div className="flex gap-4">
@@ -79,7 +79,7 @@ const Footer = () => {
               Company
             </h4>
             <ul className="space-y-4 text-foreground/70 text-sm font-light">
-              {["Our Heritage", "Manufacturing", "Distribution", "Contact"].map(
+              {["Our Legacy", "Manufacturing", "Distribution", "Contact"].map(
                 (link) => (
                   <li key={link}>
                     <a href="#" className="hover:text-accent transition-colors">
@@ -136,7 +136,7 @@ const Footer = () => {
         <div className="border-t border-accent/20 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 text-foreground/50 text-xs font-light">
             <p>
-              © {new Date().getFullYear()} Pavithram Food Products. Heritage of
+              © {new Date().getFullYear()} Pavithram Food Products. Legacy of
               excellence.
             </p>
             <div className="flex gap-8">
