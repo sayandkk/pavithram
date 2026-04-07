@@ -121,7 +121,7 @@ const OurStory = () => {
           viewport={{ once: true }}
           className="mb-24"
         >
-          <div className="space-y-6 text-lg text-foreground/70 leading-relaxed mb-12 max-w-3xl">
+          <div className="space-y-6 text-lg text-foreground/70 leading-relaxed mb-12 max-w-3xl mx-auto text-center">
             <p>
               From the lush green pastures of Palakkad, Pavithram brings to your
               table the most <span className="text-accent font-medium">authentic and pure dairy products in Kerala</span>. 
