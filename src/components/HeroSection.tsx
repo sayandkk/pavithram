@@ -6,58 +6,56 @@ import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-20">
+    <section className="relative h-[calc(100vh-5rem)] flex items-center justify-center overflow-hidden mt-20">
       {/* Full Background Image - starts after navbar */}
       <div className="absolute inset-0 w-full h-full top-0 z-0">
         <img
           src="/hero.png"
           alt="Premium Dairy Background"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-bottom"
         />
-        {/* Overlay gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+        {/* Uniform overlay for centered text readability */}
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-5xl">
+      <div className="container mx-auto px-6 relative z-10 max-w-5xl text-center pt-20">
         {/* Text Content Overlay */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-2xl"
+          className="max-w-3xl mx-auto"
         >
           {/* Luxury header */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mb-8"
+            className="mb-8 flex flex-col items-center"
           >
-            <p className="text-accent font-serif text-xl italic mb-4"></p>
             <div className="w-12 h-1 bg-accent rounded-full mb-8" />
           </motion.div>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-tight mb-8 tracking-tight">
-            Pure by Nature. <br /> Perfect by <br /> Choice.
+            Pure by Nature. <br /> Perfect by Choice.
           </h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl text-white/90 leading-relaxed mb-12 max-w-lg font-light"
+            className="text-xl text-white/90 leading-relaxed mb-12 max-w-lg mx-auto font-light"
           >
             For over two decades, Pavithram has been the embodiment of purity
             and tradition. Every drop of milk carries the essence of Kerala's
-            finest farms, delivering uncompromising quality to discerning
-            families.
+            finest farms.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 mb-16"
+            className="flex flex-col sm:flex-row justify-center gap-6 mb-16"
           >
             <Button
               size="lg"
@@ -66,13 +64,6 @@ const HeroSection = () => {
             >
               Discover Collection
             </Button>
-            {/* <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold"
-            >
-              Our Legacy
-            </Button> */}
           </motion.div>
 
           {/* Luxury stats */}
@@ -87,7 +78,7 @@ const HeroSection = () => {
               { number: "50k+", label: "Happy Homes" },
               { number: "#1", label: "Choice of Kerala" },
             ].map((stat, i) => (
-              <div key={i}>
+              <div key={i} className="text-center">
                 <div className="text-4xl font-serif text-accent mb-2">
                   {stat.number}
                 </div>
