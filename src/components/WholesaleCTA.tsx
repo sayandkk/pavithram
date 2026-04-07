@@ -71,6 +71,11 @@ const WholesaleCTA = () => {
 
           <Button
             size="lg"
+            onClick={() => {
+              const phoneNumber = "7034508354";
+              const message = "Hello, I am interested in becoming a partner with Pavithram. Please provide more details about the partnership opportunities.";
+              window.open(`https://wa.me/91${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+            }}
             className="rounded-full px-12 h-16 text-lg bg-accent hover:bg-accent/90 hover:text-white transition-all duration-500 shadow-2xl shadow-accent/20 group font-bold"
           >
             Become a Partner

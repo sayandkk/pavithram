@@ -39,30 +39,27 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-12">
-          {["Products", "Our Story", "Manufacturing", "Distribution"].map(
-            (item) => {
-              const isProductsLink = item === "Products";
-              const href = isProductsLink
-                ? "/products"
-                : `/#${item.toLowerCase().replace(/ /g, "-")}`;
-              const NavLink = isProductsLink ? Link : "a";
+          {[
+            { name: "Products", path: "/products", isInternal: true },
+            { name: "About Us", path: "/about-us", isInternal: true },
+          ].map((item) => {
+            const NavLink = item.isInternal ? Link : "a";
 
-              return (
-                <NavLink
-                  key={item}
-                  to={isProductsLink ? href : undefined}
-                  href={!isProductsLink ? href : undefined}
-                  className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? "text-foreground/80 hover:text-accent" : "text-foreground/90 hover:text-accent"}`}
-                >
-                  {item}
-                  <span
-                    className={`absolute bottom-0 left-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300 ${scrolled ? "w-0" : "w-0"}`}
-                    style={{ width: "0" }}
-                  />
-                </NavLink>
-              );
-            },
-          )}
+            return (
+              <NavLink
+                key={item.name}
+                to={item.isInternal ? item.path : undefined}
+                href={!item.isInternal ? item.path : undefined}
+                className={`text-sm font-medium transition-colors duration-300 relative group ${scrolled ? "text-foreground/80 hover:text-accent" : "text-foreground/90 hover:text-accent"}`}
+              >
+                {item.name}
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300 ${scrolled ? "w-0" : "w-0"}`}
+                  style={{ width: "0" }}
+                />
+              </NavLink>
+            );
+          })}
           <Button
             variant="default"
             size="sm"
@@ -92,27 +89,24 @@ const Navbar = () => {
             className="absolute top-20 left-4 right-4 md:hidden bg-background border border-accent/20 rounded-lg p-6 shadow-lg z-40"
           >
             <div className="flex flex-col gap-4 text-center">
-              {["Products", "Our Story", "Manufacturing", "Distribution"].map(
-                (item) => {
-                  const isProductsLink = item === "Products";
-                  const href = isProductsLink
-                    ? "/products"
-                    : `/#${item.toLowerCase().replace(/ /g, "-")}`;
-                  const NavLink = isProductsLink ? Link : "a";
+              {[
+                { name: "Products", path: "/products", isInternal: true },
+                { name: "About Us", path: "/about-us", isInternal: true },
+              ].map((item) => {
+                const NavLink = item.isInternal ? Link : "a";
 
-                  return (
-                    <NavLink
-                      key={item}
-                      to={isProductsLink ? href : undefined}
-                      href={!isProductsLink ? href : undefined}
-                      className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors py-3"
-                      onClick={() => setOpen(false)}
-                    >
-                      {item}
-                    </NavLink>
-                  );
-                },
-              )}
+                return (
+                  <NavLink
+                    key={item.name}
+                    to={item.isInternal ? item.path : undefined}
+                    href={!item.isInternal ? item.path : undefined}
+                    className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors py-3"
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.name}
+                  </NavLink>
+                );
+              })}
               <Button
                 variant="default"
                 onClick={() => {

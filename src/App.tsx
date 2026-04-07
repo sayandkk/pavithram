@@ -12,10 +12,10 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Navbar";
 import Preloader from "./components/Preloader";
+import ProductDetail from "./pages/ProductDetail";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
-
-import ProductDetail from "./pages/ProductDetail";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -26,6 +26,7 @@ const AnimatedRoutes = () => {
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

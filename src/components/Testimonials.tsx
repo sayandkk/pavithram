@@ -3,21 +3,21 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Arun Varma",
+    name: "Shamil Mohamed ",
     role: "Proprietor, Grand Supermarket, Palakkad",
     quote:
       "The shelf life and freshness of Pavithram Milk are unparalleled. Our customers specifically ask for it every morning. The quality is simply consistent.",
-    avatar: "https://i.pravatar.cc/150?u=1",
+    avatar: "https://i.pravatar.cc/150?u=2",
   },
   {
     name: "Meera Menon",
     role: "Health & Nutrition Expert",
     quote:
       "I always recommend Pavithram to my clients. It's rare to find dairy products that maintain such traditional purity without any artificial additives.",
-    avatar: "https://i.pravatar.cc/150?u=2",
+    avatar: "https://i.pravatar.cc/150?u=1",
   },
   {
-    name: "Deepak S.",
+    name: "Deepika S.",
     role: "Cloud Kitchen Owner, Kochi",
     quote:
       "The consistency of Pavithram Ghee is fantastic for our professional kitchen. The aroma and purity take our traditional dishes to another level.",
