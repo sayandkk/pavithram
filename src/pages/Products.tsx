@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { products, categories } from "@/data/products";
 import { ChevronRight, Search, Star, Award } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import PageWrapper from "@/components/PageWrapper";
 
@@ -153,13 +154,13 @@ const Products = () => {
                             {filteredProducts.length > 0 ? (
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                                     {filteredProducts.map((product, i) => (
+                                    <Link to={`/product/${product.id}`} key={product.id} className="block group">
                                         <motion.div
-                                            key={product.id}
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: i * 0.05, duration: 0.4 }}
                                             whileHover={{ y: -8 }}
-                                            className="group relative bg-white border border-accent/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                                            className="relative bg-white border border-accent/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
                                         >
                                             {/* Premium Badge */}
                                             <div className="absolute top-4 right-4 z-10 bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
@@ -177,7 +178,7 @@ const Products = () => {
                                             </div>
 
                                             {/* Content */}
-                                            <div className="p-6">
+                                            <div className="p-6 flex flex-col flex-grow">
                                                 {/* Category & Size */}
                                                 <div className="flex justify-between items-start mb-4 gap-2">
                                                     <span className="inline-block px-3 py-1 bg-accent/15 text-accent rounded-full text-xs font-bold uppercase tracking-wider">
@@ -205,16 +206,15 @@ const Products = () => {
                                                 </div>
 
                                                 {/* CTA Button */}
-                                                <motion.button
-                                                    whileHover={{ scale: 1.02 }}
-                                                    whileTap={{ scale: 0.98 }}
-                                                    className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group-hover:shadow-accent/40"
-                                                >
-                                                    Enquire Now
-                                                    <ChevronRight size={18} />
-                                                </motion.button>
+                                                <div className="mt-auto">
+                                                    <div className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group-hover:shadow-accent/40">
+                                                        View Details
+                                                        <ChevronRight size={18} />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </motion.div>
+                                    </Link>
                                     ))}
                                 </div>
                             ) : (

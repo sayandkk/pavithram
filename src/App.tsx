@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
 
+import ProductDetail from "./pages/ProductDetail";
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   return (
@@ -20,6 +22,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Index />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
