@@ -7,21 +7,21 @@ const OurStory = () => {
       year: "2020",
       title: "Legacy Founded",
       description:
-        "Started with a vision to bring pure, untouched dairy from Palakkad farms",
+        "Started with a vision to bring pure, untouched dairy from Palakkad farms directly to Kerala homes",
       icon: Droplets,
     },
     {
       year: "2022",
       title: "Trust Expanded",
       description:
-        "Reached 10,000+ households with our A2 milk and Legacy dairy products",
+        "Reached 10,000+ households with our farm-fresh milk and premium dairy products Kerala",
       icon: Heart,
     },
     {
       year: "2026",
       title: "Pure Excellence",
       description:
-        "Now serving 50,000+ families with premium, certified dairy products across Kerala",
+        "Now serving 50,000+ families with natural dairy products and fresh milk delivery in Thrissur",
       icon: Leaf,
     },
   ];
@@ -29,19 +29,19 @@ const OurStory = () => {
   const values = [
     {
       title: "100% Pure",
-      desc: "No additives, preservatives, or artificial flavors",
+      desc: "No adulteration, ensuring pure and traditional dairy goodness",
     },
     {
-      title: "Farm Fresh",
+      title: "Farm Fresh Milk",
       desc: "Direct from Palakkad farms to your table within 24 hours",
     },
     {
-      title: "Legacy Recipes",
-      desc: "Traditional dairy craftsmanship passed down through generations",
+      title: "Traditional Ghee",
+      desc: "Authentic Kerala dairy craftsmanship passed down through generations",
     },
     {
-      title: "Community First",
-      desc: "Supporting local farmers and empowering rural communities",
+      title: "Dairy Products Online",
+      desc: "Easy access to premium curd, ghee, and milk delivery in Kerala",
     },
   ];
 
@@ -62,15 +62,15 @@ const OurStory = () => {
         >
           <div className="inline-block px-4 py-2 bg-accent/15 rounded-full border border-accent/40 mb-8">
             <span className="text-accent font-serif text-sm uppercase tracking-widest">
-              Our Legacy
+              Natural Goodness
             </span>
           </div>
           <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">
-            6 Years of <span className="text-accent">Trusted Goodness</span>
+            6 Years of <span className="text-accent">Authentic Kerala Dairy</span>
           </h2>
           <p className="text-xl text-foreground/70 font-light">
-            From Palakkad's pristine farms to your family's table, maintaining
-            the highest standards of purity and quality.
+            From Palakkad's pristine farms to your family's table, Pavithram is your trusted 
+            <span className="text-accent font-medium"> local dairy farm in Kerala</span>.
           </p>
         </motion.div>
 
@@ -124,15 +124,16 @@ const OurStory = () => {
           <div className="space-y-6 text-lg text-foreground/70 leading-relaxed mb-12 max-w-3xl">
             <p>
               From the lush green pastures of Palakkad, Pavithram brings to your
-              table the most authentic and pure dairy experience. Our journey
-              began with a simple mission: to provide every household with milk
-              that's as fresh as a morning at the farm.
+              table the most <span className="text-accent font-medium">authentic and pure dairy products in Kerala</span>. 
+              Our journey began with a simple mission: to provide every household with 
+              <span className="text-accent font-medium"> farm fresh milk</span> that's as natural 
+              as a morning at the farm.
             </p>
             <p>
-              We believe in the harmony of nature and technology. By partnering
-              directly with local farmers and employing modern cold-chain
-              logistics, we ensure that every drop of Pavithram milk retains its
-              natural nutrients and traditional taste.
+              We believe in the harmony of nature and traditional dairy craftsmanship. 
+              By partnering directly with local farmers and employing modern cold-chain 
+              logistics, we ensure that every drop of Pavithram milk retains its 
+              natural nutrients and natural goodness.
             </p>
           </div>
 

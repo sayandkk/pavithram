@@ -83,7 +83,7 @@ const CategoryShowcase = () => {
                         {cat.image ? (
                           <img
                             src={cat.image}
-                            alt={cat.name}
+                            alt={`Pavithram ${cat.name} - Premium Dairy Products in Kerala`}
                             className="w-full h-full object-cover rounded-3xl"
                           />
                         ) : (

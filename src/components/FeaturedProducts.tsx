@@ -81,7 +81,7 @@ const FeaturedProducts = () => {
                 <div className="relative aspect-square rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden mb-6 flex items-center justify-center">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={`Pavithram ${product.name} - Premium ${product.category} in Kerala`}
                     className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>

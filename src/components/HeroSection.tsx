@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full top-0 z-0">
         <img
           src="/hero.png"
-          alt="Premium Dairy Background"
+          alt="Pavithram - Farm Fresh Milk and Pure Dairy Products Kerala"
           className="w-full h-full object-cover object-bottom"
         />
         {/* Uniform overlay for centered text readability */}
@@ -40,10 +40,21 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-3xl md:text-5xl text-white leading-tight mb-12 max-w-3xl mx-auto font-serif tracking-tight"
+            className="text-3xl md:text-5xl text-white leading-tight mb-8 max-w-3xl mx-auto font-serif tracking-tight"
           >
             Pure by Nature. <br /> Perfect by Choice.
           </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light"
+          >
+            Experience premium <span className="text-accent font-medium">farm fresh milk delivery</span> and
+            traditional <span className="text-accent font-medium">dairy products in Kerala</span>.
+            Pure, natural, and delivered from our farms to your home.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

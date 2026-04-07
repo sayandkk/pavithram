@@ -25,9 +25,9 @@ const AboutUs = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Our Legacy</h1>
+              <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Authentic Kerala Dairy</h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
-                Crafting purity and tradition since 2020 in the heart of Palakkad.
+                Crafting purity and tradition since 2020 as a <span className="text-accent font-medium">premium dairy brand in Kerala</span>.
               </p>
             </motion.div>
           </div>
@@ -46,7 +46,7 @@ const AboutUs = () => {
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                   <img
                     src="/products/pavitram milk.png"
-                    alt="Pavithram Quality"
+                    alt="Pavithram - Pure Cow Milk Kerala and Dairy Products"
                     className="w-full h-full object-contain bg-secondary/20 p-12"
                   />
                 </div>
@@ -62,15 +62,15 @@ const AboutUs = () => {
               >
                 <div className="space-y-4">
                   <span className="text-accent font-serif uppercase tracking-widest text-sm">Born in Palakkad</span>
-                  <h2 className="text-4xl md:text-5xl font-serif leading-tight">Trusted Goodness for <span className="text-accent">26 Years</span></h2>
+                  <h2 className="text-4xl md:text-5xl font-serif leading-tight">Trusted Goodness for <span className="text-accent">6 Years</span></h2>
                 </div>
 
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
-                  For over two decades, Pavithram has been synonymous with dairy purity in Kerala. Founded in 2020, our journey began with a simple vision: to bring the freshness of the farm directly to your doorstep without compromising on quality or tradition.
+                  For over half a decade, Pavithram has been synonymous with dairy purity and <span className="text-accent font-medium">fresh milk delivery in Kerala</span>. Founded in 2020, our journey began with a simple vision: to bring the freshness of the farm directly to your doorstep without compromising on quality or tradition.
                 </p>
 
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
-                  Today, we stand as one of the most trusted dairy brands, serving thousands of families daily with milk, curd, ghee, and traditional dairy products that taste just like home.
+                  Today, we stand as a leading <span className="text-accent font-medium">local dairy farm in Kerala</span>, serving thousands of families daily with pure cow milk, curd, ghee, and traditional dairy products that capture the natural goodness of our land.
                 </p>
 
                 <div className="grid grid-cols-2 gap-8 pt-8 border-t border-accent/20">

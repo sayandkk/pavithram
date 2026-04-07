@@ -38,8 +38,9 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-foreground/70 text-sm leading-relaxed font-light mb-8">
-              Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Trusted
-              by Kerala since 2020.
+              Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Premium 
+              <span className="text-accent font-medium"> dairy products Kerala</span> trusted 
+              since 2020.
             </p>
             <div className="flex gap-4">
               {[
@@ -69,14 +70,14 @@ const Footer = () => {
             transition={{ delay: 0.1 }}
           >
             <h4 className="font-serif text-accent mb-8 text-sm uppercase tracking-wider">
-              Products
+              Our Products
             </h4>
             <ul className="space-y-4 text-foreground/70 text-sm font-light">
               {[
-                { name: "Cow Milk", path: "/products" },
-                { name: "Pure Ghee", path: "/products" },
-                { name: "Fresh Curd", path: "/products" },
-                { name: "Buttermilk", path: "/products" }
+                { name: "Fresh Cow Milk", path: "/products" },
+                { name: "Pure Desi Ghee", path: "/products" },
+                { name: "Natural Fresh Curd", path: "/products" },
+                { name: "Spiced Buttermilk", path: "/products" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link to={link.path} className="hover:text-accent transition-colors">
@@ -87,7 +88,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Company */}
+          {/* Company & Presence */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,24 +96,26 @@ const Footer = () => {
             transition={{ delay: 0.2 }}
           >
             <h4 className="font-serif text-accent mb-8 text-sm uppercase tracking-wider">
-              Company
+              Presence
             </h4>
-            <ul className="space-y-4 text-foreground/70 text-sm font-light">
+            <ul className="space-y-4 text-foreground/70 text-sm font-light mb-8">
+              <li>Milk delivery in Thrissur</li>
+              <li>Dairy products in Kerala</li>
+              <li>Fresh milk in Palakkad</li>
+            </ul>
+            <h4 className="font-serif text-accent mb-6 text-xs uppercase tracking-widest opacity-70">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-foreground/60 text-xs font-light">
               {[
                 { name: "About Us", path: "/about-us" },
-                { name: "Manufacturing", path: "/#manufacturing", isAnchor: true },
-                { name: "Our Products", path: "/products" },
                 { name: "Contact Us", path: "https://wa.me/917034508354", isExternal: true }
               ].map((link) => (
                 <li key={link.name}>
                   {link.isExternal ? (
-                    <a href={link.path} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors border-b border-transparent hover:border-accent/30 flex items-center gap-2 group">
+                    <a href={link.path} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                       {link.name}
                     </a>
-                  ) : link.isAnchor ? (
-                    <Link to={link.path} onClick={scrollToManufacturing} className="hover:text-accent transition-colors">
-                      {link.name}
-                    </Link>
                   ) : (
                     <Link to={link.path} className="hover:text-accent transition-colors">
                       {link.name}
@@ -137,6 +140,8 @@ const Footer = () => {
               <li className="flex items-start gap-4">
                 <MapPin size={18} className="shrink-0 mt-0.5 text-accent" />
                 <span>
+                  <span className="font-medium text-foreground/90">Main Farm & Office</span>
+                  <br />
                   Palakkad, Kerala
                   <br />
                   679303, India
