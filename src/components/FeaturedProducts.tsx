@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 import { ChevronRight } from "lucide-react";
 
@@ -35,15 +36,18 @@ const FeaturedProducts = () => {
               Premium Dairy <span className="text-accent">Delights</span>
             </motion.h2>
           </div>
-          <motion.a
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            href="#products"
-            className="flex items-center text-accent hover:text-accent/80 font-light gap-2 transition-colors"
           >
-            View All <ChevronRight size={20} />
-          </motion.a>
+            <Link
+              to="/products"
+              className="flex items-center text-accent hover:text-accent/80 font-light gap-2 transition-colors"
+            >
+              View All <ChevronRight size={20} />
+            </Link>
+          </motion.div>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -55,41 +59,45 @@ const FeaturedProducts = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
               whileHover={{ y: -8 }}
-              className="group bg-background border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all"
+              className="group bg-background border border-accent/20 rounded-xl p-6 hover:border-accent/40 transition-all flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative aspect-square rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden mb-6 flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              <div>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-[11px] uppercase tracking-wider font-light px-3 py-1 bg-accent/10 text-accent rounded-full">
-                    {product.category}
-                  </span>
-                  <span className="text-[10px] text-foreground/60 font-light uppercase">
-                    {product.packSizes.split(",")[0]}
-                  </span>
+              <Link to={`/product/${product.id}`} className="flex flex-col h-full">
+                {/* Image Container */}
+                <div className="relative aspect-square rounded-lg bg-gradient-to-br from-accent/20 to-accent/5 overflow-hidden mb-6 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
 
-                <h3 className="font-serif font-bold text-foreground text-lg mb-2 group-hover:text-accent transition-colors line-clamp-1">
-                  {product.name}
-                </h3>
-                <p className="text-foreground/70 text-sm line-clamp-2 leading-relaxed mb-6 font-light">
-                  {product.description}
-                </p>
+                <div className="flex flex-col flex-grow">
+                  <div className="flex justify-between items-center mb-4">
+                    <span className="text-[11px] uppercase tracking-wider font-light px-3 py-1 bg-accent/10 text-accent rounded-full">
+                      {product.category}
+                    </span>
+                    <span className="text-[10px] text-foreground/60 font-light uppercase">
+                      {product.packSizes.split(",")[0]}
+                    </span>
+                  </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  className="w-full rounded-lg bg-accent/10 hover:bg-accent hover:text-primary text-accent border border-accent/30 hover:border-accent transition-all duration-300 py-3 font-light flex items-center justify-center gap-2"
-                >
-                  Enquire Now <ChevronRight size={16} />
-                </motion.button>
-              </div>
+                  <h3 className="font-serif font-bold text-foreground text-lg mb-2 group-hover:text-accent transition-colors line-clamp-1">
+                    {product.name}
+                  </h3>
+                  <p className="text-foreground/70 text-sm line-clamp-2 leading-relaxed mb-6 font-light h-10">
+                    {product.description}
+                  </p>
+
+                  <div className="mt-auto">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="w-full rounded-lg bg-accent/10 group-hover:bg-accent group-hover:text-primary text-accent border border-accent/30 group-hover:border-accent transition-all duration-300 py-3 font-light flex items-center justify-center gap-2"
+                    >
+                      View Details <ChevronRight size={16} />
+                    </motion.div>
+                  </div>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
