@@ -38,7 +38,7 @@ const HeroSection = () => {
           </motion.div>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif text-white leading-tight mb-8 tracking-tight">
-            Liquid <br /> Gold from <br /> Palakkad
+            Pure by Nature. <br /> Perfect by <br /> Choice.
           </h1>
 
           <motion.p

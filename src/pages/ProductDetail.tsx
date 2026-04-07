@@ -58,6 +58,14 @@ const ProductDetail = () => {
         ? product.variantImages[Object.keys(product.variantImages).find(key => selectedVariant.includes(key))!]
         : product.image;
 
+    const handleEnquiry = () => {
+        const phoneNumber = "7034508354";
+        const message = `Hello Pavithram, I am interested in ${product.name} - ${selectedVariant}. Could you please provide more details?`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/91${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappUrl, "_blank");
+    };
+
     return (
         <PageWrapper>
             <div className="min-h-screen bg-background flex flex-col">
@@ -179,6 +187,7 @@ const ProductDetail = () => {
                                     </div> */}
 
                                     <button
+                                        onClick={handleEnquiry}
                                         className="flex-1 bg-accent hover:bg-accent/90 text-white font-bold h-14 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                                     >
                                         Enquire Now

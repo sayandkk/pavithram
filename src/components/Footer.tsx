@@ -30,7 +30,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-foreground/70 text-sm leading-relaxed font-light mb-8">
-              Crafting liquid gold from Palakkad's heritage dairy farms. Trusted
+              Crafting Trusted Goodness from Palakkad's heritage dairy farms. Trusted
               by Kerala since 1998.
             </p>
             <div className="flex gap-4">
@@ -116,7 +116,7 @@ const Footer = () => {
                   href="tel:+919876543210"
                   className="hover:text-accent transition-colors"
                 >
-                  +91 98765 43210
+                  +91 7034508354
                 </a>
               </li>
               <li className="flex items-center gap-4">

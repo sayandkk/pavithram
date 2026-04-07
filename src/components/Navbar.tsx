@@ -66,6 +66,7 @@ const Navbar = () => {
           <Button
             variant="default"
             size="sm"
+            onClick={() => window.open("https://wa.me/917034508354", "_blank")}
             className="rounded-lg px-7 bg-accent text-foreground hover:bg-accent/90 font-semibold shadow-lg"
           >
             Contact
@@ -114,6 +115,10 @@ const Navbar = () => {
               )}
               <Button
                 variant="default"
+                onClick={() => {
+                  window.open("https://wa.me/917034508354", "_blank");
+                  setOpen(false);
+                }}
                 className="w-full rounded-lg py-5 mt-4 bg-accent text-foreground"
               >
                 Contact

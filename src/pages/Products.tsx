@@ -115,11 +115,10 @@ const Products = () => {
                             >
                                 <button
                                     onClick={() => setSelectedCategory(null)}
-                                    className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                                        !selectedCategory
+                                    className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${!selectedCategory
                                             ? "bg-accent text-white shadow-lg shadow-accent/20"
                                             : "bg-background border border-accent/30 text-foreground hover:border-accent/50 hover:bg-secondary/20"
-                                    }`}
+                                        }`}
                                 >
                                     All Products
                                 </button>
@@ -127,11 +126,10 @@ const Products = () => {
                                     <button
                                         key={cat.name}
                                         onClick={() => setSelectedCategory(cat.name)}
-                                        className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
-                                            selectedCategory === cat.name
+                                        className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${selectedCategory === cat.name
                                                 ? "bg-accent text-white shadow-lg shadow-accent/20"
                                                 : "bg-background border border-accent/30 text-foreground hover:border-accent/50 hover:bg-secondary/20"
-                                        }`}
+                                            }`}
                                     >
                                         <span className="text-lg">{categoryEmojis[cat.name]}</span>
                                         {cat.name}
@@ -150,7 +148,7 @@ const Products = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.1 }}
                                 >
-                                    <div className="text-3xl font-bold text-accent mb-2">{filteredProducts.length}</div>
+                                    <div className="text-3xl font-bold text-accent mb-2">10+</div>
                                     <p className="text-foreground/70 font-light">Products</p>
                                 </motion.div>
                                 <motion.div
@@ -181,67 +179,67 @@ const Products = () => {
                             {filteredProducts.length > 0 ? (
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                                     {expandedProducts.map((product, i) => (
-                                    <Link to={`/product/${product.id}`} state={{ initialVariant: product.initialVariant }} key={product.displayId} className="block group">
-                                        <motion.div
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            transition={{ delay: i * 0.05, duration: 0.4 }}
-                                            whileHover={{ y: -8 }}
-                                            className="relative bg-white border border-accent/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
-                                        >
-                                            {/* Premium Badge */}
-                                            <div className="absolute top-4 right-4 z-10 bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
-                                                <Award size={16} /> Premium
-                                            </div>
-
-                                            {/* Product Icon/Image */}
-                                            <div className="relative h-56 bg-gradient-to-br from-secondary/40 via-background to-secondary/20 flex items-center justify-center overflow-hidden border-b border-accent/10">
-                                                <img
-                                                  src={product.displayImage}
-                                                  alt={product.displayName}
-                                                  className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-500"
-                                                />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="p-6 flex flex-col flex-grow">
-                                                {/* Category & Size */}
-                                                <div className="flex justify-between items-start mb-4 gap-2">
-                                                    <span className="inline-block px-3 py-1 bg-accent/15 text-accent rounded-full text-xs font-bold uppercase tracking-wider">
-                                                        {product.category}
-                                                    </span>
-                                                    <span className="text-xs text-foreground/50 font-medium uppercase">{product.packSizes.split(',')[0]}</span>
+                                        <Link to={`/product/${product.id}`} state={{ initialVariant: product.initialVariant }} key={product.displayId} className="block group">
+                                            <motion.div
+                                                initial={{ opacity: 0, scale: 0.9 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: i * 0.05, duration: 0.4 }}
+                                                whileHover={{ y: -8 }}
+                                                className="relative bg-white border border-accent/20 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col"
+                                            >
+                                                {/* Premium Badge */}
+                                                <div className="absolute top-4 right-4 z-10 bg-accent text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg">
+                                                    <Award size={16} /> Premium
                                                 </div>
 
-                                                {/* Product Name */}
-                                                <h3 className="font-serif text-xl font-bold text-foreground mb-2 line-clamp-2 group-hover:text-accent transition-colors">
-                                                    {product.displayName}
-                                                </h3>
-
-                                                {/* Description */}
-                                                <p className="text-foreground/60 text-sm line-clamp-3 leading-relaxed mb-6 h-16">
-                                                    {product.description}
-                                                </p>
-
-                                                {/* Features */}
-                                                <div className="flex items-center gap-2 mb-6 text-xs text-foreground/70">
-                                                    <div className="w-2 h-2 rounded-full bg-accent" />
-                                                    <span>Farm Fresh</span>
-                                                    <div className="w-2 h-2 rounded-full bg-accent" />
-                                                    <span>FSSAI Certified</span>
+                                                {/* Product Icon/Image */}
+                                                <div className="relative h-56 bg-gradient-to-br from-secondary/40 via-background to-secondary/20 flex items-center justify-center overflow-hidden border-b border-accent/10">
+                                                    <img
+                                                        src={product.displayImage}
+                                                        alt={product.displayName}
+                                                        className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-500"
+                                                    />
+                                                    <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                                 </div>
 
-                                                {/* CTA Button */}
-                                                <div className="mt-auto">
-                                                    <div className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group-hover:shadow-accent/40">
-                                                        View Details
-                                                        <ChevronRight size={18} />
+                                                {/* Content */}
+                                                <div className="p-6 flex flex-col flex-grow">
+                                                    {/* Category & Size */}
+                                                    <div className="flex justify-between items-start mb-4 gap-2">
+                                                        <span className="inline-block px-3 py-1 bg-accent/15 text-accent rounded-full text-xs font-bold uppercase tracking-wider">
+                                                            {product.category}
+                                                        </span>
+                                                        <span className="text-xs text-foreground/50 font-medium uppercase">{product.packSizes.split(',')[0]}</span>
+                                                    </div>
+
+                                                    {/* Product Name */}
+                                                    <h3 className="font-serif text-xl font-bold text-foreground mb-2 line-clamp-2 group-hover:text-accent transition-colors">
+                                                        {product.displayName}
+                                                    </h3>
+
+                                                    {/* Description */}
+                                                    <p className="text-foreground/60 text-sm line-clamp-3 leading-relaxed mb-6 h-16">
+                                                        {product.description}
+                                                    </p>
+
+                                                    {/* Features */}
+                                                    <div className="flex items-center gap-2 mb-6 text-xs text-foreground/70">
+                                                        <div className="w-2 h-2 rounded-full bg-accent" />
+                                                        <span>Farm Fresh</span>
+                                                        <div className="w-2 h-2 rounded-full bg-accent" />
+                                                        <span>FSSAI Certified</span>
+                                                    </div>
+
+                                                    {/* CTA Button */}
+                                                    <div className="mt-auto">
+                                                        <div className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-accent/20 group-hover:shadow-accent/40">
+                                                            View Details
+                                                            <ChevronRight size={18} />
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </motion.div>
-                                    </Link>
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </div>
                             ) : (

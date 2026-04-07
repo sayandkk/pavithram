@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { categories } from "@/data/products";
+import { Link } from "react-router-dom";
+import { products, categories } from "@/data/products";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const CategoryShowcase = () => {
@@ -47,76 +48,83 @@ const CategoryShowcase = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {categories.map((cat, i) => (
-            <motion.div
-              key={cat.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.12 }}
-              whileHover={{ y: -12 }}
-              className="group cursor-pointer"
-            >
-              {/* Card Container */}
-              <div className="relative h-full bg-white border border-accent/20 rounded-3xl p-10 shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 overflow-hidden">
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Top Accent Bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
+          {categories.map((cat, i) => {
+            const product = products.find(p => p.category === cat.name);
+            const productUrl = product ? `/product/${product.id}` : "/products";
 
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-                  {/* Icon/Image Container */}
-                  <motion.div
-                    initial={{ scale: 1 }}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-32 h-32 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-6xl mb-8 shadow-md group-hover:shadow-lg transition-all duration-300 border border-accent/20 group-hover:border-accent/40"
-                  >
-                    {cat.image ? (
-                      <img
-                        src={cat.image}
-                        alt={cat.name}
-                        className="w-full h-full object-cover rounded-3xl"
-                      />
-                    ) : (
-                      cat.icon
-                    )}
-                  </motion.div>
+            return (
+              <motion.div
+                key={cat.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+                whileHover={{ y: -12 }}
+                className="group cursor-pointer"
+              >
+                {/* Card Container */}
+                <Link to={productUrl} className="block h-full">
+                  <div className="relative h-full bg-white border border-accent/20 rounded-3xl p-10 shadow-lg hover:shadow-2xl hover:border-accent/50 transition-all duration-300 overflow-hidden">
+                    {/* Background Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Top Accent Bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent via-accent/50 to-transparent" />
 
-                  {/* Category Name */}
-                  <h3 className="font-serif font-bold text-foreground text-3xl mb-3 group-hover:text-accent transition-colors duration-300">
-                    {cat.name}
-                  </h3>
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
+                      {/* Icon/Image Container */}
+                      <motion.div
+                        initial={{ scale: 1 }}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                        className="w-32 h-32 rounded-3xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-6xl mb-8 shadow-md group-hover:shadow-lg transition-all duration-300 border border-accent/20 group-hover:border-accent/40"
+                      >
+                        {cat.image ? (
+                          <img
+                            src={cat.image}
+                            alt={cat.name}
+                            className="w-full h-full object-cover rounded-3xl"
+                          />
+                        ) : (
+                          cat.icon
+                        )}
+                      </motion.div>
 
-                  {/* Product Count */}
-                  <p className="text-foreground/60 font-light text-base mb-8">
-                    <span className="font-semibold text-accent">{cat.count}</span> Premium Items Available
-                  </p>
+                      {/* Category Name */}
+                      <h3 className="font-serif font-bold text-foreground text-3xl mb-3 group-hover:text-accent transition-colors duration-300">
+                        {cat.name}
+                      </h3>
 
-                  {/* Description */}
-                  <p className="text-foreground/70 text-sm font-light mb-8 leading-relaxed">
-                    Discover our curated selection of authentic {cat.name.toLowerCase()} products, sourced directly from Kerala's finest dairy farms.
-                  </p>
+                      {/* Product Count */}
+                      <p className="text-foreground/60 font-light text-base mb-8">
+                        <span className="font-semibold text-accent">{cat.count}</span> Premium Items Available
+                      </p>
 
-                  {/* CTA Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-3 px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-accent/40 group-hover:pr-6"
-                  >
-                    Explore Now
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </motion.button>
-                </div>
+                      {/* Description */}
+                      <p className="text-foreground/70 text-sm font-light mb-8 leading-relaxed">
+                        Discover our curated selection of authentic {cat.name.toLowerCase()} products, sourced directly from Kerala's finest dairy farms.
+                      </p>
 
-                {/* Floating Accent Dots */}
-                <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </motion.div>
-          ))}
+                      {/* CTA Link */}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-3 px-8 py-3 bg-accent hover:bg-accent/90 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-accent/20 hover:shadow-accent/40 group-hover:pr-6"
+                      >
+                        Explore Now
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </motion.div>
+                    </div>
+
+                    {/* Floating Accent Dots */}
+                    <div className="absolute top-6 right-6 w-3 h-3 rounded-full bg-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute bottom-6 left-6 w-2 h-2 rounded-full bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
 
         {/* View All CTA */}

@@ -66,7 +66,7 @@ const OurStory = () => {
             </span>
           </div>
           <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">
-            26 Years of <span className="text-accent">Liquid Gold</span>
+            26 Years of <span className="text-accent">Trusted Goodness</span>
           </h2>
           <p className="text-xl text-foreground/70 font-light">
             From Palakkad's pristine farms to your family's table, maintaining
