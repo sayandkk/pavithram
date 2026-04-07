@@ -49,8 +49,9 @@ const App = () => {
     
     // Safety fallback
     const fallbackTimer = setTimeout(() => {
+      console.warn("Preloader forcefully dismissed: Image loading timed out after 20 seconds.");
       setIsAppLoading(false);
-    }, 5000);
+    }, 20000);
 
     const handleImageLoad = () => {
       loadedCount++;

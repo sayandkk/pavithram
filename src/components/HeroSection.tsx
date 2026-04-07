@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-20">
       {/* Full Background Image - starts after navbar */}
@@ -59,17 +61,18 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
+              onClick={() => navigate('/products')}
               className="bg-accent text-black hover:bg-accent/90 rounded-lg px-10 h-14 text-base font-semibold shadow-xl"
             >
               Discover Collection
             </Button>
-            <Button
+            {/* <Button
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white/10 rounded-lg px-10 h-14 text-base font-semibold"
             >
               Our Heritage
-            </Button>
+            </Button> */}
           </motion.div>
 
           {/* Luxury stats */}
