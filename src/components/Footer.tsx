@@ -39,7 +39,7 @@ const Footer = () => {
             </Link>
             <p className="text-foreground/70 text-sm leading-relaxed font-light mb-8">
               Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Trusted
-              by Kerala since 1998.
+              by Kerala since 2020.
             </p>
             <div className="flex gap-4">
               {[
@@ -145,7 +145,7 @@ const Footer = () => {
               <li className="flex items-center gap-4">
                 <Phone size={18} className="shrink-0 text-accent" />
                 <a
-                  href="tel:+917034508354"
+                  href="tel:+91 7034508354"
                   className="hover:text-accent transition-colors"
                 >
                   +91 7034508354

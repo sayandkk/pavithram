@@ -4,21 +4,21 @@ import { Droplets, Heart, Leaf, CheckCircle } from "lucide-react";
 const OurStory = () => {
   const milestones = [
     {
-      year: "1998",
+      year: "2020",
       title: "Legacy Founded",
       description:
         "Started with a vision to bring pure, untouched dairy from Palakkad farms",
       icon: Droplets,
     },
     {
-      year: "2005",
+      year: "2022",
       title: "Trust Expanded",
       description:
         "Reached 10,000+ households with our A2 milk and Legacy dairy products",
       icon: Heart,
     },
     {
-      year: "2024",
+      year: "2026",
       title: "Pure Excellence",
       description:
         "Now serving 50,000+ families with premium, certified dairy products across Kerala",
@@ -66,7 +66,7 @@ const OurStory = () => {
             </span>
           </div>
           <h2 className="font-serif text-5xl md:text-6xl text-foreground mb-6 leading-tight">
-            26 Years of <span className="text-accent">Trusted Goodness</span>
+            6 Years of <span className="text-accent">Trusted Goodness</span>
           </h2>
           <p className="text-xl text-foreground/70 font-light">
             From Palakkad's pristine farms to your family's table, maintaining
@@ -173,7 +173,7 @@ const OurStory = () => {
           <p className="text-foreground/80 text-lg font-light italic leading-relaxed">
             Our dairy excellence isn't just a business goal—it's a commitment to
             the health of our community and the prosperity of our farmers. Every
-            bottle of Pavithram represents 26 years of unwavering dedication to
+            bottle of Pavithram represents 6 years of unwavering dedication to
             quality and purity.
           </p>
         </motion.div>

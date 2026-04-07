@@ -27,7 +27,7 @@ const AboutUs = () => {
             >
               <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">Our Legacy</h1>
               <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
-                Crafting purity and tradition since 1998 in the heart of Palakkad.
+                Crafting purity and tradition since 2020 in the heart of Palakkad.
               </p>
             </motion.div>
           </div>
@@ -66,7 +66,7 @@ const AboutUs = () => {
                 </div>
 
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
-                  For over two decades, Pavithram has been synonymous with dairy purity in Kerala. Founded in 1998, our journey began with a simple vision: to bring the freshness of the farm directly to your doorstep without compromising on quality or tradition.
+                  For over two decades, Pavithram has been synonymous with dairy purity in Kerala. Founded in 2020, our journey began with a simple vision: to bring the freshness of the farm directly to your doorstep without compromising on quality or tradition.
                 </p>
 
                 <p className="text-lg text-foreground/70 leading-relaxed font-light">
@@ -75,7 +75,7 @@ const AboutUs = () => {
 
                 <div className="grid grid-cols-2 gap-8 pt-8 border-t border-accent/20">
                   <div>
-                    <h4 className="text-3xl font-serif text-accent mb-1">1998</h4>
+                    <h4 className="text-3xl font-serif text-accent mb-1">2020</h4>
                     <p className="text-sm text-foreground/50 uppercase tracking-wider">Established</p>
                   </div>
                   <div>
