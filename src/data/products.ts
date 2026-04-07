@@ -40,7 +40,8 @@ export const products: Product[] = [
       "Curd": "Fresh, smooth, and naturally fermented curd made from high-quality milk. Supports digestion and adds richness to your meals."
     },
     variantImages: {
-      "Thick Curd": "/products/thick%20curd.png"
+      "Thick Curd": "/products/thick%20curd.png",
+      "Bottle Curd": "/products/bottle%20curd.png"
     }
   },
   {
@@ -54,6 +55,9 @@ export const products: Product[] = [
       "BM": "Light, refreshing, and healthy drink made from churned curd. Perfect for staying cool and hydrated.",
       "Masala": "Spiced buttermilk blended with traditional Indian flavors. A tasty and refreshing digestive drink.",
       "Sambaram": "Authentic Kerala-style spiced buttermilk with curry leaves and green chili. A perfect summer refreshment."
+    },
+    variantImages: {
+      "Masala": "/products/masala%20butter%20milk.png"
     }
   },
   {

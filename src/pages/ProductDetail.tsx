@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronLeft, Minus, Plus, Award, ShieldCheck, Leaf } from "lucide-react";
 import { products } from "@/data/products";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
     const product = products.find(p => p.id === Number(id));
 
     const [selectedVariant, setSelectedVariant] = useState<string>("");
@@ -18,11 +19,22 @@ const ProductDetail = () => {
     useEffect(() => {
         if (product) {
             const variants = product.packSizes.split(",").map(v => v.trim());
+            
+            // Check if we have an initial variant passed from navigation state
+            const initialVariantKey = location.state?.initialVariant;
+            if (initialVariantKey) {
+                const matchingVariant = variants.find(v => v.includes(initialVariantKey));
+                if (matchingVariant) {
+                    setSelectedVariant(matchingVariant);
+                    return;
+                }
+            }
+
             if (variants.length > 0) {
                 setSelectedVariant(variants[0]);
             }
         }
-    }, [product]);
+    }, [product, location.state]);
 
     if (!product) {
         return (

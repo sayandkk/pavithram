@@ -20,6 +20,33 @@ const Products = () => {
         ? products.filter(p => p.category === selectedCategory)
         : products;
 
+    const expandedProducts = filteredProducts.flatMap(product => {
+        const items = [{
+            ...product,
+            displayId: `${product.id}-main`,
+            displayName: product.name,
+            displayImage: product.image,
+            initialVariant: null as string | null
+        }];
+
+        if (product.variantImages) {
+            const seenImages = new Set([product.image]);
+            Object.entries(product.variantImages).forEach(([key, img]) => {
+                if (!seenImages.has(img)) {
+                    seenImages.add(img);
+                    items.push({
+                        ...product,
+                        displayId: `${product.id}-variant-${key}`,
+                        displayName: `${product.name} (${key})`,
+                        displayImage: img,
+                        initialVariant: key
+                    });
+                }
+            });
+        }
+        return items;
+    });
+
     return (
         <PageWrapper>
             <div className="min-h-screen bg-background flex flex-col">
@@ -153,8 +180,8 @@ const Products = () => {
                         <div className="container mx-auto">
                             {filteredProducts.length > 0 ? (
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                                    {filteredProducts.map((product, i) => (
-                                    <Link to={`/product/${product.id}`} key={product.id} className="block group">
+                                    {expandedProducts.map((product, i) => (
+                                    <Link to={`/product/${product.id}`} state={{ initialVariant: product.initialVariant }} key={product.displayId} className="block group">
                                         <motion.div
                                             initial={{ opacity: 0, scale: 0.9 }}
                                             animate={{ opacity: 1, scale: 1 }}
@@ -170,8 +197,8 @@ const Products = () => {
                                             {/* Product Icon/Image */}
                                             <div className="relative h-56 bg-gradient-to-br from-secondary/40 via-background to-secondary/20 flex items-center justify-center overflow-hidden border-b border-accent/10">
                                                 <img
-                                                  src={product.image}
-                                                  alt={product.name}
+                                                  src={product.displayImage}
+                                                  alt={product.displayName}
                                                   className="w-full h-full object-contain group-hover:scale-125 transition-transform duration-500"
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -189,7 +216,7 @@ const Products = () => {
 
                                                 {/* Product Name */}
                                                 <h3 className="font-serif text-xl font-bold text-foreground mb-2 line-clamp-2 group-hover:text-accent transition-colors">
-                                                    {product.name}
+                                                    {product.displayName}
                                                 </h3>
 
                                                 {/* Description */}
