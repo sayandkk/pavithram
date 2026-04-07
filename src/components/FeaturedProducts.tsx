@@ -3,7 +3,22 @@ import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 import { ChevronRight } from "lucide-react";
 
-const featured = products.slice(0, 4);
+const featured = [
+  products.find(p => p.id === 2), // Fresh Curd
+  (() => {
+    const p3 = products.find(p => p.id === 3);
+    if (!p3) return null;
+    return {
+      ...p3,
+      name: "Masala Butter Milk",
+      image: p3.variantImages?.["Masala"] || p3.image,
+      description: p3.variantDescriptions?.["Masala"] || p3.description,
+      packSizes: "300 ML"
+    };
+  })(),
+  products.find(p => p.id === 4), // Ghee
+  products.find(p => p.id === 6), // Nannari
+].filter(Boolean) as any[];
 
 const FeaturedProducts = () => {
   return (
@@ -91,7 +106,7 @@ const FeaturedProducts = () => {
                   <div className="mt-auto">
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="w-full rounded-lg bg-accent/10 group-hover:bg-accent group-hover:text-primary text-accent border border-accent/30 group-hover:border-accent transition-all duration-300 py-3 font-light flex items-center justify-center gap-2"
+                      className="w-full rounded-lg bg-accent text-white border border-accent transition-all duration-300 py-3 font-semibold flex items-center justify-center gap-2 shadow-lg shadow-accent/20"
                     >
                       View Details <ChevronRight size={16} />
                     </motion.div>
