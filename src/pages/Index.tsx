@@ -10,21 +10,24 @@ import WholesaleCTA from "@/components/WholesaleCTA";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
+import PageWrapper from "@/components/PageWrapper";
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <HeroSection />
-      <TrustBar />
-      <OurStory />
-      <CategoryShowcase />
-      <FeaturedProducts />
-      <ManufacturingExcellence />
-      <DistributionMap />
-      <WholesaleCTA />
-      <Testimonials />
-      <Footer />
-    </div>
+    <PageWrapper>
+      <div className="min-h-screen bg-background">
+        <HeroSection />
+        <TrustBar />
+        <OurStory />
+        <CategoryShowcase />
+        <FeaturedProducts />
+        <ManufacturingExcellence />
+        <DistributionMap />
+        <WholesaleCTA />
+        <Testimonials />
+        <Footer />
+      </div>
+    </PageWrapper>
   );
 };
 
