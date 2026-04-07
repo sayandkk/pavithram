@@ -65,7 +65,7 @@ export const products: Product[] = [
     packSizes: "Standard Milk, Toned Milk, Raw Milk, Skim Milk, Curd, Thick Curd, Butter Milk",
     description:
       "Premium dairy supplies crafted for bulk and commercial requirements.",
-    image: "/placeholder.svg",
+    image: "/products/bulk.png",
     variantDescriptions: {
       "Standard Milk": "Fresh and rich milk with balanced fat content, ideal for daily use in homes, hotels, and businesses.",
       "Toned Milk": "Healthy and lighter milk option with reduced fat, perfect for regular consumption and beverages.",
@@ -92,6 +92,6 @@ export const categories = [
   { name: "Curd", icon: "🥣", count: 1, image: "/products/curd.png" },
   { name: "Butter Milk", icon: "🥤", count: 1, image: "/products/pavitram%20milk.png" },
   { name: "Ghee", icon: "🧈", count: 1, image: "/products/Premium%20ghee.png" },
-  { name: "Bulk", icon: "📦", count: 1, image: "/placeholder.svg" },
-  { name: "Beverage", icon: "🍹", count: 1, image: "/placeholder.svg" },
+  { name: "Bulk", icon: "📦", count: 1, image: "/products/bulk.png" },
+  { name: "Beverage", icon: "🍹", count: 1, image: "/products/nannari%20surbath.png" },
 ];

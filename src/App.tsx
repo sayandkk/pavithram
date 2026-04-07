@@ -42,7 +42,9 @@ const App = () => {
       "/products/pavitram%20milk.png",
       "/products/Premium%20ghee.png",
       "/products/curd.png",
-      "/products/buttter.png"
+      "/products/buttter.png",
+      "/products/nannari%20surbath.png",
+      "/products/bulk.png"
     ];
 
     let loadedCount = 0;
