@@ -29,7 +29,7 @@ const ProductDetail = () => {
             <PageWrapper>
                 <div className="min-h-screen flex flex-col items-center justify-center bg-background">
                     <h2 className="text-3xl font-serif mb-4">Product Not Found</h2>
-                    <button 
+                    <button
                         onClick={() => navigate('/products')}
                         className="text-accent hover:underline flex items-center gap-2"
                     >
@@ -47,9 +47,9 @@ const ProductDetail = () => {
             <div className="min-h-screen bg-background flex flex-col">
                 <main className="flex-grow pt-24 pb-16">
                     <div className="container mx-auto px-6 max-w-6xl">
-                        
+
                         {/* Breadcrumb / Back Button */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             className="mb-8"
@@ -61,7 +61,7 @@ const ProductDetail = () => {
 
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
                             {/* Left Column: Image */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
@@ -71,15 +71,15 @@ const ProductDetail = () => {
                                     <Award size={16} /> Premium
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent mix-blend-multiply" />
-                                <img 
-                                    src={product.image} 
-                                    alt={product.name} 
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
                                     className="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
                                 />
                             </motion.div>
 
                             {/* Right Column: Details */}
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -88,14 +88,23 @@ const ProductDetail = () => {
                                 <div className="inline-block px-4 py-2 bg-accent/10 rounded-full border border-accent/20 mb-6 w-max">
                                     <span className="text-accent font-serif text-sm uppercase tracking-widest">{product.category}</span>
                                 </div>
-                                
+
                                 <h1 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 leading-tight">
                                     {product.name}
                                 </h1>
-                                
-                                <p className="text-lg text-foreground/70 font-light mb-10 leading-relaxed">
-                                    {product.description}
-                                </p>
+
+                                <motion.div
+                                    key={selectedVariant}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <p className="text-lg text-foreground/70 font-light mb-10 leading-relaxed min-h-[80px]">
+                                        {product.variantDescriptions && Object.keys(product.variantDescriptions).find(key => selectedVariant.includes(key))
+                                            ? product.variantDescriptions[Object.keys(product.variantDescriptions).find(key => selectedVariant.includes(key))!]
+                                            : product.description}
+                                    </p>
+                                </motion.div>
 
                                 {/* Features */}
                                 <div className="grid grid-cols-2 gap-4 mb-10">
@@ -117,17 +126,16 @@ const ProductDetail = () => {
 
                                 {/* Variant Selection */}
                                 <div className="mb-8">
-                                    <h3 className="text-sm uppercase tracking-wider font-semibold text-foreground/60 mb-4">Select Pack Size</h3>
+                                    <h3 className="text-sm uppercase tracking-wider font-semibold text-foreground/60 mb-4">Varients</h3>
                                     <div className="flex flex-wrap gap-3">
                                         {variants.map(variant => (
                                             <button
                                                 key={variant}
                                                 onClick={() => setSelectedVariant(variant)}
-                                                className={`px-6 py-3 rounded-xl border-2 font-medium transition-all duration-200 ${
-                                                    selectedVariant === variant 
-                                                    ? 'border-accent bg-accent/5 text-accent shadow-sm' 
+                                                className={`px-6 py-3 rounded-xl border-2 font-medium transition-all duration-200 ${selectedVariant === variant
+                                                    ? 'border-accent bg-accent/5 text-accent shadow-sm'
                                                     : 'border-accent/20 text-foreground/70 hover:border-accent/40 hover:bg-secondary/10'
-                                                }`}
+                                                    }`}
                                             >
                                                 {variant}
                                             </button>
@@ -137,7 +145,7 @@ const ProductDetail = () => {
 
                                 {/* Quantity Selection & Action */}
                                 <div className="flex flex-col sm:flex-row gap-4">
-                                    <div className="flex items-center justify-between border-2 border-accent/20 rounded-xl px-4 py-2 w-full sm:w-36 h-14 bg-background">
+                                    {/* <div className="flex items-center justify-between border-2 border-accent/20 rounded-xl px-4 py-2 w-full sm:w-36 h-14 bg-background">
                                         <button 
                                             onClick={() => setQuantity(q => Math.max(1, q - 1))}
                                             className="p-1 hover:bg-secondary/20 rounded-md text-foreground/60 hover:text-foreground transition-colors"
@@ -151,9 +159,9 @@ const ProductDetail = () => {
                                         >
                                             <Plus size={20} />
                                         </button>
-                                    </div>
+                                    </div> */}
 
-                                    <button 
+                                    <button
                                         className="flex-1 bg-accent hover:bg-accent/90 text-white font-bold h-14 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                                     >
                                         Enquire Now
