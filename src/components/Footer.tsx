@@ -38,8 +38,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-foreground/70 text-sm leading-relaxed font-light mb-8">
-              Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Premium 
-              <span className="text-accent font-medium"> dairy products Kerala</span> trusted 
+              Crafting Trusted Goodness from Palakkad's Legacy dairy farms. Premium
+              <span className="text-accent font-medium"> dairy products Kerala</span> trusted
               since 2020.
             </p>
             <div className="flex gap-4">
@@ -99,7 +99,7 @@ const Footer = () => {
               Presence
             </h4>
             <ul className="space-y-4 text-foreground/70 text-sm font-light mb-8">
-              <li>Milk delivery in Thrissur</li>
+              <li>Milk delivery</li>
               <li>Dairy products in Kerala</li>
               <li>Fresh milk in Palakkad</li>
             </ul>
