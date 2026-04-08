@@ -106,7 +106,7 @@ const Products = () => {
                     </section>
 
                     {/* Category Filter Section */}
-                    <section className="sticky top-16 bg-background/95 backdrop-blur border-b border-accent/20 py-6 z-40">
+                    <section className="bg-background py-8 border-b border-accent/20">
                         <div className="container mx-auto px-6">
                             <motion.div
                                 initial={{ opacity: 0, y: -10 }}

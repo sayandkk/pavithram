@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -7,21 +7,41 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
 
   const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      
+      // Set scrolled state for background styling
+      setScrolled(currentScrollY > 20);
+
+      // Hide/Show navbar based on scroll direction
+      // Don't hide if the mobile menu is open
+      if (!open) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+      }
+
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [open]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 py-3 ${scrolled ? "bg-background/95 border-b border-accent/20 shadow-lg backdrop-blur" : "bg-background"}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 md:px-8 py-3 ${
+        scrolled ? "bg-background/95 border-b border-accent/20 shadow-lg backdrop-blur" : "bg-background"
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
     >
       <nav className="container mx-auto h-16 px-0 md:px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
